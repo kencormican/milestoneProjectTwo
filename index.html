@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Ireland COVID Statistics | by Ken Cormican</title>
+</head>
 
-    <title>Ireland COVID Statistics | by Ken Cormican</title>
-  </head>
-  <body>
-    <div id="headline-data"></div>
-    <div id="map"></div>
-    <div id="ireland-data"></div>
-    <div id="county-data"></div>
-    <div id="data"></div>
+<body>
+	<div id="headline-data"></div>
+	<div id="map"></div>
+	<div id="ireland-data"></div>
+	<div id="county-data"></div>
+	<div id="data"></div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.js"
-      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
-      crossorigin="anonymous"
-    ></script>
-    <script src="js/10-getJsonCountryWideData.js"></script>
-  </body>
+    <!-- Load jQuery Library -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js"
+		integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- Load Jasmine Framework -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine-html.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/boot.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.css">
+
+	<script src="assets/scripts/12-jasmineTestSpecAdded.js"></script>
+    <!-- Load Tests -->
+    <script type="text/javascript" src="assets/spec/jasmineTestSpec.js"></script>
+
+</body>
+
 </html>

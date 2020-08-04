@@ -65,10 +65,10 @@ function writeToDocument() {                            // writeToDocument funct
     // Print Headline Data to Page
     var headlineElement = document.getElementById("headline"); 
     var tableArray = tableRows[tableRows.length-1].split(",");
-    headlineElement.innerHTML = `
+    headlineElement.innerHTML = `<h2>
     <p>Total Confirmed Covid Cases: ${tableArray[2]}</p>
     <p>Total Covid Deaths: ${tableArray[4]}</p>
-    `
+    </h2>`
 
   });
 }
