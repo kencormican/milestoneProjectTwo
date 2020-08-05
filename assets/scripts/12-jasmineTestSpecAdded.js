@@ -1,7 +1,7 @@
 $(document).ready(fetchGeoHiveDataSet); // On document ready initiate fetchGeoHiveDataSet function
 
 // API CountryWide Query URL Filtered for Daily Cases, Deaths, Hospitaluised Cases, Gender & Age Range
-// Response to be used for Google HeatMAP, headline info, graphs and pie charts
+// Response to be used for headline info, graphs and pie charts
 const countryWideURL =
   "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=Date,ConfirmedCovidCases,TotalConfirmedCovidCases,ConfirmedCovidDeaths,TotalCovidDeaths,CovidCasesConfirmed,HospitalisedCovidCases,RequiringICUCovidCases,Male,Female,Unknown,Aged1,Aged1to4,Aged5to14,Aged15to24,Aged25to34,Aged35to44,Aged45to54,Aged55to64,Aged65up,Median_Age,FID&outSR=4326&f=json";
 
@@ -9,7 +9,6 @@ function fetchGeoHiveDataSet() {
   $.when($.getJSON(countryWideURL)).then(               //Retrive JSOn Parsed Data from countryWideURL
     function (response) {
       var irelandData = response;                       // set irelandData to store API response
-      //console.log(irelandData);
       //console.dir(irelandData);
       $("#ireland-data").html(parseIrelandData(irelandData));       // placeholder for calling parseIrelandData function passing ing irelandData response
     },
