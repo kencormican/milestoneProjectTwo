@@ -10,7 +10,7 @@ function fetchGeoHiveDataSet() {
     function (response) {
       var irelandData = response;                       // set irelandData to store API response
       //console.dir(irelandData);
-      $("#ireland-data").html(parseIrelandData(irelandData));       // placeholder for calling parseIrelandData function passing ing irelandData response
+      $("#ireland-data").html(parseIrelandData(irelandData));       // placeholder for calling parseIrelandData function pa =ssing ing irelandData response
     },
     function (errorResponse) {                          // 2nd argument of $.when()$.then() promise for Error Responses
       if (errorResponse.status === 404) {
@@ -68,6 +68,7 @@ function parseIrelandData(irelandData) {
   irelandDataToArray.unshift(tableHeaders);
   //console.log(irelandDataToArray);
   parseIrlHeadlineData(irelandDataToArray);
+  return irelandDataToArray;
 
  
 }
