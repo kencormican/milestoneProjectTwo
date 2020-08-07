@@ -42,29 +42,6 @@ function processCSVData(csvText) {                          // Parses CSV data i
     
     console.log("this is parsedCountyDataArray inside processCSVData: ", parsedCountyDataArray);
     
-    parseCountyArrayForMap(parsedCountyDataArray);
-     
-    //return parsedCountyDataArray;                           // Return array as output from function
-}
-
-function parseCountyArrayForMap(obj) {                       // Create create three column array for Geo Map
-
-    obj = obj.map(function (item) {
-        return item.splice(0, 3);                           // only retain upto item index 2 (3rd item in subarray)
-    });
-
-    obj[4][0] = "IE-CO";                                    
-    // This replaces the Cork label with IE-CO to faciliate GeoChart constraint nd render cor data to the map.
-
-    console.log("this is obj after the pop inside parsedCountyArrayForMap(): ", obj );
-                                                            
-  
-    parsedCountyArrayForMap = obj;
-
-    
-
-    console.log("this is parsedCountyArrayForMap inside parsedCountyArrayForMap(): ", parsedCountyArrayForMap);
-            
-    setMapData(parsedCountyArrayForMap);                    // This passes the parsed array into the Google Charts API Call.
+    parseCountyArrayForMap(parsedCountyDataArray);     
     
 }

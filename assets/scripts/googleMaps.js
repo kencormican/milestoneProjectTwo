@@ -1,11 +1,33 @@
-function setMapData(obj2) {
-  var mapData = obj2;
+function parseCountyArrayForMap(fromCSVParse) {                       // Create create three column array for Geo Map
 
-  //$.makeArray(obj2);                                          // convert Array object to true array
+   
+    fromCSVParse = fromCSVParse.map(function (item) {
+        return item.slice(0, 3);                           // only retain upto item index 2 (3rd item in subarray)
+    });
 
-  console.log($.isArray(obj2));                                 // Is object a true array
+    fromCSVParse[4][0] = "IE-CO";                                    
+    // This replaces the Cork label with IE-CO to faciliate GeoChart constraint nd render cor data to the map.
 
-  console.log("this is mapData inside drawRegionsMap(): ", mapData);
+    //console.log("this is obj after the pop inside parsedCountyArrayForMap(): ", obj );
+                                                            
+    parsedCountyArrayForMap = fromCSVParse;    
+
+    //console.log("this is parsedCountyArrayForMap inside parsedCountyArrayForMap(): ", parsedCountyArrayForMap);
+            
+    setMapData(parsedCountyArrayForMap);                    // This passes the parsed array into the Google Charts API Call.
+    
+}
+
+
+function setMapData(fromMapArrayParse) {
+  
+  var mapData = fromMapArrayParse;
+
+  // $.makeArray(mapData);                                          // convert Array object to true array
+
+  // console.log($.isArray(mapData));                                 // Is object a true array
+
+  
 
   google.charts.load("current", {
     packages: ["geochart"],
@@ -17,7 +39,7 @@ function setMapData(obj2) {
 
   function drawRegionsMap() {
 
-    
+    console.log("this is mapData inside drawRegionsMap(): ", mapData);
 
     var data = google.visualization.arrayToDataTable(mapData, false);     
     /* 
