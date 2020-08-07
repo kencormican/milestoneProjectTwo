@@ -1,6 +1,10 @@
 $(document).ready(fetchCSVData);                // On document ready run fetchCSVData to intiate ajax get request and retrieve the CSV File
 
+
+var parsedCountyDataArrayGlobal = [];
+
 function fetchCSVData() {                                           // retrieve CSV file using jQuey .ajax(GET) method 
+ 
     $.ajax({
         type: "GET",
         url: "/assets/dataSet/publicHealthInformation.csv",
@@ -8,10 +12,10 @@ function fetchCSVData() {                                           // retrieve 
         success: function (response) {                              // On successful response initiate function pssing in response as argument
             var rawCSVdata = response;                              // Store response in rawCSVdata variable
             //processCSVData(rawCSVdata);                           // Call processCSVData function and pass ajax response as argument. 
-            var parsedCountyDataArray = processCSVData(rawCSVdata); // store output of processCSVData in parsedCountyDataArray variable
-            //console.log(parsedCountyDataArray);
-        }        
-    });    
+            var parsedCountyDataArrayInside = processCSVData(rawCSVdata); // store output of processCSVData in parsedCountyDataArray variable
+        } 
+        
+    });   
 };
 
 function processCSVData(csvText) {                          // Parses CSV data into county data array
@@ -35,12 +39,13 @@ function processCSVData(csvText) {                          // Parses CSV data i
             parsedCountyDataArray.push(dataRows);            // Push parsed dataRows into parsedCountyDataArray
         }
     }
-
-     parseCountyArrayForMap(parsedCountyDataArray);
-
-    return parsedCountyDataArray;                           // Return array as output from function
+    
+    console.log("this is parsedCountyDataArray inside processCSVData: ", parsedCountyDataArray);
+    
+    parseCountyArrayForMap(parsedCountyDataArray);
+     
+    //return parsedCountyDataArray;                           // Return array as output from function
 }
-
 
 function parseCountyArrayForMap(obj) {                       // Create create three column array for Geo Map
 
@@ -48,7 +53,18 @@ function parseCountyArrayForMap(obj) {                       // Create create th
         return item.splice(0, 3);                           // only retain upto item index 2 (3rd item in subarray)
     });
 
-    console.log(obj)
+    obj[4][0] = "IE-CO";                                    
+    // This replaces the Cork label with IE-CO to faciliate GeoChart constraint nd render cor data to the map.
 
+    console.log("this is obj after the pop inside parsedCountyArrayForMap(): ", obj );
+                                                            
+  
+    parsedCountyArrayForMap = obj;
+
+    
+
+    console.log("this is parsedCountyArrayForMap inside parsedCountyArrayForMap(): ", parsedCountyArrayForMap);
+            
+    setMapData(parsedCountyArrayForMap);                    // This passes the parsed array into the Google Charts API Call.
+    
 }
-

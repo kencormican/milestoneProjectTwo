@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.css">
+
 	<title>Ireland COVID Statistics | by Ken Cormican</title>
 </head>
 
@@ -22,14 +25,31 @@
     <!-- Load Google Charts Libraries -->    
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-    
+    <!-- Load Jasmine Test Libraries -->    
+    <!--
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine-html.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/boot.js"></script>
+    -->
 
     <!--------------------------------------Load Local JS Scripts------------------------------------------------>
 
     <!-- Load fetch and parse County CSV data script-->
+    
 	<script type="text/javascript" src="assets/scripts/getCountyDataFromCSV.js"></script>
+    
     <!-- Load Google Maps API script -->
 	<script type="text/javascript" src="assets/scripts/googleMaps.js"></script>
+    
+    <!--------------------------------------Load Local JS Spec------------------------------------------------>
+
+    <!-- Load jasmineTestSpec script-->
+    <!--    
+    <script type="text/javascript" src="assets/scripts/spec/jasmineTestSpec.js"></script>
+    -->
+
+
+
 </body>
 
 </html>
