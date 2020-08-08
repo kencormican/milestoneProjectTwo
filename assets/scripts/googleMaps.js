@@ -1,7 +1,7 @@
 function parseCountyArrayForMap(fromCSVParse) {             // Create create three column array for Geo Map
 
    
-    fromCSVParse = fromCSVParse.map(function (item) {
+    var fromCSVParse = fromCSVParse.map(function (item) {
         return item.slice(0, 3);                            // only retain upto item index 2 (3rd item in subarray)
     });
 
@@ -9,7 +9,7 @@ function parseCountyArrayForMap(fromCSVParse) {             // Create create thr
     // This replaces the Cork label with IE-CO to faciliate GeoChart constraint nd render cor data to the map.
 
                                                             
-    parsedCountyArrayForMap = fromCSVParse;    
+    var parsedCountyArrayForMap = fromCSVParse;    
 
     console.log("this is parsedCountyArrayForMap inside parsedCountyArrayForMap() function: ", parsedCountyArrayForMap);
 
@@ -50,8 +50,8 @@ function setMapData(fromMapArrayParse) {
       region: "IE",                                                 // This property sets the focus on Ireland
       resolution: "provinces",                                      // This property sets the county boudaries
           colorAxis: {colors: ['red', 'black', '#5b0000']},         // LightRed(#f56967), DarkRed(#5b0000)
-          backgroundColor: '#81d4fa',
-          datalessRegionColor: 'grey',
+          backgroundColor: 'white',
+          datalessRegionColor: 'LightGrey',
           defaultColor: '#f5f5f5',
     };
 
