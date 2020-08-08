@@ -1,18 +1,19 @@
-function parseCountyArrayForMap(fromCSVParse) {             // Create create three column array for Geo Map
+function parseCountyArrayForMap(fromCSVParse) {                       // Create create three column array for Geo Map
 
    
     fromCSVParse = fromCSVParse.map(function (item) {
-        return item.slice(0, 3);                            // only retain upto item index 2 (3rd item in subarray)
+        return item.slice(0, 3);                           // only retain upto item index 2 (3rd item in subarray)
     });
 
-    fromCSVParse[4][0] = "IE-CO";                                   
+    fromCSVParse[4][0] = "IE-CO";                                    
     // This replaces the Cork label with IE-CO to faciliate GeoChart constraint nd render cor data to the map.
 
+    //console.log("this is obj after the pop inside parsedCountyArrayForMap(): ", obj );
                                                             
     parsedCountyArrayForMap = fromCSVParse;    
 
-    console.log("this is parsedCountyArrayForMap inside parsedCountyArrayForMap() function: ", parsedCountyArrayForMap);
-
+    //console.log("this is parsedCountyArrayForMap inside parsedCountyArrayForMap(): ", parsedCountyArrayForMap);
+            
     setMapData(parsedCountyArrayForMap);                    // This passes the parsed array into the Google Charts API Call.
     
 }
@@ -38,7 +39,7 @@ function setMapData(fromMapArrayParse) {
 
   function drawRegionsMap() {
 
-    console.log("this is mapData inside drawRegionsMap() function: ", mapData);
+    console.log("this is mapData inside drawRegionsMap(): ", mapData);
 
     var data = google.visualization.arrayToDataTable(mapData, false);     
     /* 
