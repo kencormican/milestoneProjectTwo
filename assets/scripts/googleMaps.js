@@ -29,12 +29,19 @@ function setMapData(fromMapArrayParse) {
   
 
   google.charts.load("current", {
-    packages: ["geochart"],
+    packages: ["corechart" , "geochart"],
     // Note: you will need to get a mapsApiKey for your project.
     // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
     mapsApiKey: Apikey,
+
   });
+
   google.charts.setOnLoadCallback(drawRegionsMap);
+  google.charts.setOnLoadCallback(drawTestPieChartOne);
+  google.charts.setOnLoadCallback(drawTestPieChartTwo);
+
+
+  // Declare GeoChart Function for Country Map
 
   function drawRegionsMap() {
 
@@ -61,5 +68,65 @@ function setMapData(fromMapArrayParse) {
 
     chart.draw(data, options);
   }
+
+  
+    // Declare function to draw Test Pie Chart One 
+
+    function drawTestPieChartOne() {
+
+        // Create the data table for Pie Chart One.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+            ['Mushrooms', 1],
+            ['Onions', 1],
+            ['Olives', 2],
+            ['Zucchini', 2],
+            ['Pepperoni', 1]
+        ]);
+
+        // Set options for Pie Chart One.
+        var options = {
+            title: 'How Much Pizza X Ate Last Night',
+            width: 400,
+            height: 300
+        };
+
+        // Instantiate and draw the chart for Pie Chart One
+        var chart = new google.visualization.PieChart(document.getElementById('ireland-countrywide-chart'));
+        chart.draw(data, options);
+    }
+
+    // Declare function to draw Test Pie Chart Two 
+
+    function drawTestPieChartTwo() {
+
+        // Create the data table for Pie Chart Two.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+            ['Mushrooms', 2],
+            ['Onions', 2],
+            ['Olives', 2],
+            ['Zucchini', 0],
+            ['Pepperoni', 3]
+        ]);
+
+        // Set options for Pie Chart Two.
+        var options = {
+            title: 'How Much Pizza Y Ate Last Night',
+            width: 400,
+            height: 300
+        };
+
+        // Instantiate and draw the chart for Pie Chart Two
+        var chart = new google.visualization.PieChart(document.getElementById('ireland-county-chart'));
+        chart.draw(data, options);
+    }
+
+
+
 }
 
