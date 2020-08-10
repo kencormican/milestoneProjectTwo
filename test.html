@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.css">
+
+	<title>Ireland COVID Statistics | by Ken Cormican</title>
+
+</head>
+
+<body>
+
+	<header>
+		<h1>Ireland | COVID-19 Disease Tracker</h1>
+	</header>
+	<section id="section-headline-data">
+		<div id="headline-data"></div>
+	</section>
+	<section id="section-map" >
+		<div>
+			<h3 class="section-heading-map uppercase">Ireland Corona Virus Cases</h3>
+			<p>
+				Hover over each County Boundary to view County Details
+			</p>
+		</div>
+		<div id="map"></div>
+	</section>
+	<section id="section-graphs">
+		<div>
+			<h3 class="section-heading-graphs uppercase">Countrywide Cases | Daily Statistics</h3>
+				<p>
+					Graph Number One plots the Confirmed Cases over time.
+                    Graph Number Two plots the Confirmed Deaths over time.
+				</p>
+	
+				<div id="ireland-total-cases-graphed"></div>
+                <div id="ireland-total-deaths-graphed"></div>	
+		</div>
+		<div id="ireland-data"></div>
+	</section>
+	<section id="section-county-table" >
+		<div>
+			<h3 class="section-heading-county-table uppercase">County Breakdown of Confirmed COVID Cases</h3>
+			<p>
+				Select Show More to expand Table
+			</p>
+		</div>
+		<div id="county-data-table"></div>
+	</section>
+
+	<section id="section-pie-charts">
+		<div>
+			<h3 class="section-heading-graphs uppercase">Statistics Breakdown</h3>
+				<p>
+					Pie Chart One provides statistics for the Whole Country 
+                    Pie Chart Two provides statistics for the selected County 
+				</p>
+	
+				<div id="ireland-countrywide-chart"></div>
+                <div id="ireland-county-chart"></div>	
+		</div>
+	</section>
+
+ 
+    <!----------------------------------------Load JS libraries------------------------------------------------->
+    
+    <!-- Load jQuery Library -->
+	<script src="https://code.jquery.com/jquery-3.5.1.js" 
+    integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="	crossorigin="anonymous"></script>
+
+
+    <!--------------------------------------Load Local JS Scripts------------------------------------------------>
+
+  
+
+    <script type="text/javascript" src="assets/scripts/testCountryData.js"></script>
+ 
+
+</body>
+
+</html>
