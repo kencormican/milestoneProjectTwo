@@ -1,8 +1,6 @@
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 // Bar Chart Data Collector
 
-console.log("Hello there")
-
 function parseIrlBarChartData(fromParseIrelandData) {
 
     console.log("parseIrlBarChartData function initiated")
@@ -10,7 +8,7 @@ function parseIrlBarChartData(fromParseIrelandData) {
     //console.log("This is the fromParseIrelandData Array inside the parseIrlHeadlineData() function: ",fromParseIrelandData)
 
     var irlCasesBarChartData = fromParseIrelandData.map(function (item) {
-        return item.slice(0, 2);                            // only retain upto item index 2 in subarray...(so indexes 0 & 1)
+        return (item.slice(0, 2));                                          // only retain upto item index 2 in subarray...(so indexes 0 & 1)
     });
 
     var irlDeathsBarChartData = fromParseIrelandData.map(function (item) {
@@ -29,8 +27,8 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
     var barChartOneData = fromBarChartParseCases;
     var barChartTwoData = fromBarChartParseDeaths;
 
-    console.log("This is the barChartOneData data inside setMapData(): ", barChartOneData);
-    console.log("This is the barChartTwoData data inside setMapData(): ", barChartTwoData);
+    //console.log("This is the barChartOneData data inside setMapData(): ", barChartOneData);
+    //console.log("This is the barChartTwoData data inside setMapData(): ", barChartTwoData);
 
 
     google.charts.load("current", {

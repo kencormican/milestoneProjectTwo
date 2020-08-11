@@ -7,8 +7,11 @@ const countryWideURL =
 
 
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
-// Fetch Country Data and pass respons as argument into processing functions.
+// Fetch Country Data and pass response as argument into processing functions.
 function fetchGeoHiveDataSet() {
+
+    console.log("fetchGeoHiveDataSet function initiated");
+
     $.when($.getJSON(countryWideURL)).then(                         //Retrive JSOn Parsed Data from countryWideURL
         function (response) {
             var irelandDataObject = response;                             // set irelandData to store API response
@@ -35,17 +38,20 @@ function fetchGeoHiveDataSet() {
 // Parse Ireland Object Data into Subarrays for further Processing
 
 function parseIrelandData(irelandDataObjFromFetch) {
-    console.dir(irelandDataObjFromFetch);
+
+    console.log("parseIrelandData function initiated");
+    // console.dir(irelandDataObjFromFetch);
     // console dir shows tree to include features and fields objects for data content & headers respectively
 
     featuresData = irelandDataObjFromFetch.features;                            // features Object array.
-
-    console.log("This is the featuresData Object inside the parseIrelandData() function: ", featuresData);
+    
+    //console.log("This is the featuresData Object inside the parseIrelandData() function: ", featuresData);
 
     var totalsCasesArray = parseTotalsCasesData(featuresData);
+    var dailyCasesArray = parseDailyCasesData(featuresData);
 
-    parseIrlHeadlineData(totalsCasesArray);                   // Call parseIrlHeadlineData passing in irelandDataToArray  
-    parseIrlBarChartData(totalsCasesArray);                   // Call parseIrlBarChartData passing in irelandDataToArray             
+    parseIrlHeadlineData(totalsCasesArray);                   // Call parseIrlHeadlineData passing in totalsCasesArray  
+    parseIrlBarChartData(dailyCasesArray);                   // Call parseIrlBarChartData passing in dailyCasesArray             
 }
 
 
@@ -53,6 +59,9 @@ function parseIrelandData(irelandDataObjFromFetch) {
 // Dynamic Header processing function to return header details to respective calling functions
 
 function parseTableHeaders(obj) {
+
+    console.log("parseTableHeaders function initiated");
+
     var tableHeaders = [];
     //iterate over each obj, retrieve the key and insert it into a table cell
     Object.keys(obj).forEach(function (key) {
@@ -62,10 +71,16 @@ function parseTableHeaders(obj) {
     return tableHeaders; 
 }
 
+
+
+
+
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
-// Parse fetaures Object into array for Graphs & Headline Data
+// Parse fetaures Object into array for Headline Data
 
 function parseTotalsCasesData(fromParseIrelandData) {
+
+    console.log("parseTotalsCasesData function initiated");
 
     var tableHeaders = [];                                                          // Array of Table Headers
     var tableRows = [];                                                             // Array of Table Rows
@@ -76,14 +91,24 @@ function parseTotalsCasesData(fromParseIrelandData) {
         return {
             "Date": retrieveObjKeyValuePair.attributes.Date,
             "TotalConfirmedCovidCases": retrieveObjKeyValuePair.attributes.TotalConfirmedCovidCases,
-            "TotalCovidDeaths": retrieveObjKeyValuePair.attributes.TotalCovidDeaths
+            "TotalCovidDeaths": retrieveObjKeyValuePair.attributes.TotalCovidDeaths,
         }
-    });   
+    }); 
+
+
+    // Map fromParseIrelandData object to new object filtering Date, Cases & Deaths key:value pairs 
+    var dailyCasesObject = fromParseIrelandData.map(function (retrieveObjKeyValuePair) {
+        return {
+            "Date": retrieveObjKeyValuePair.attributes.Date,
+            "ConfirmedCovidCases": retrieveObjKeyValuePair.attributes.ConfirmedCovidCases,
+            "ConfirmedCovidDeaths": retrieveObjKeyValuePair.attributes.ConfirmedCovidDeaths
+        }
+    });     
 
     // Extract totalsCasesObject properties to 2D array
 
     totalsCasesObject.forEach(function (item) {
-        tableRows.push([item.Date, item.TotalConfirmedCovidCases, item.TotalCovidDeaths])
+        tableRows.push([item.Date, item.TotalConfirmedCovidCases, item.TotalCovidDeaths,item.ConfirmedCovidCases, item.ConfirmedCovidDeaths])
     });
 
     tableHeaders = parseTableHeaders(totalsCasesObject[0]);     // Pass 1st Index of totalsCasesObject to parseTableHeaders Function
@@ -105,6 +130,55 @@ function parseTotalsCasesData(fromParseIrelandData) {
 
 
 
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+// Parse fetaures Object into array for Daily Graphs 
+
+function parseDailyCasesData(fromParseIrelandData) {
+
+    console.log("parseDailyCasesData function initiated");
+
+    var tableHeaders = [];                                                          // Array of Table Headers
+    var tableRows = [];                                                             // Array of Table Rows
+    var dailyCasesToArray = [];                                                    // Concatenated 2D array with header & row data
+
+    // Map fromParseIrelandData object to new object filtering Date, Daily Cases & Daily Deaths key:value pairs 
+    var dailyCasesObject = fromParseIrelandData.map(function (retrieveObjKeyValuePair) {
+        return {
+            "Date": retrieveObjKeyValuePair.attributes.Date,
+            "ConfirmedCovidCases": retrieveObjKeyValuePair.attributes.ConfirmedCovidCases,
+            "ConfirmedCovidDeaths": retrieveObjKeyValuePair.attributes.ConfirmedCovidDeaths
+        }
+    });   
+
+    // Extract totalsCasesObject properties to 2D array
+
+    dailyCasesObject.forEach(function (item) {
+        tableRows.push([item.Date,item.ConfirmedCovidCases, item.ConfirmedCovidDeaths])
+    });
+
+    tableHeaders = parseTableHeaders(dailyCasesObject[0]);     // Pass 1st Index of totalsCasesObject to parseTableHeaders Function
+
+    var dailyCasesToArray = tableRows;                         // Initialise totalsCasesToArray with contents of tableRows array
+    dailyCasesToArray.unshift(tableHeaders);                   // Insert tableHeaders array into index 0 of totalsCasesToArray
+
+    //$.makeArray(irelandDataToArray);
+
+    //console.log("This is the parsed totalsCasesObject: ", totalsCasesObject);
+    //console.log("This is tableRows inside parseIrelandData(): ", tableRows);
+    //console.log("This is tableHeaders inside parseIrelandData(): ", tableHeaders);
+    //console.log("This is totalsCasesToArray inside parseTotalsCasesData(): ", totalsCasesToArray);
+
+    return dailyCasesToArray;
+    
+
+}
+
+
+
+
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 // Headline Data Collector
 
@@ -123,7 +197,7 @@ function parseIrlHeadlineData(fromParseIrelandData) {
         <p>Total Covid Deaths: ${headlineData[1]}</p>`
     );
 
-    console.log("This is the headlineData Array inside the parseIrlHeadlineData() function: ", headlineData);
+    //console.log("This is the headlineData Array inside the parseIrlHeadlineData() function: ", headlineData);
 }
 
 
