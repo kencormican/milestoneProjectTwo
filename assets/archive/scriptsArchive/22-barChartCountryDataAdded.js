@@ -127,3 +127,23 @@ function parseIrlHeadlineData(fromParseIrelandData) {
 }
 
 
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+// Bar Chart Data Collector
+
+function parseIrlBarChartData(fromParseIrelandData) {
+
+    console.log("parseIrlBarChartData function initiated")
+
+    //console.log("This is the fromParseIrelandData Array inside the parseIrlHeadlineData() function: ",fromParseIrelandData)
+
+    var irlCasesBarChartData = fromParseIrelandData.map(function (item) {
+        return item.slice(0, 2);                            // only retain upto item index 2 in subarray...(so indexes 0 & 1)
+    });
+
+    var irlDeathsBarChartData = fromParseIrelandData.map(function (item) {
+        return (item.slice(0, 1)).concat(item.slice(2,3));                            // concatenates index 0 and 2 of each subarray)
+    });
+
+    console.log("This is the irlCasesBarChartData Array inside the parseIrlBarChartData() function: ", irlCasesBarChartData);
+    console.log("This is the irlDeathsBarChartData Array inside the parseIrlBarChartData() function: ", irlDeathsBarChartData);
+}
