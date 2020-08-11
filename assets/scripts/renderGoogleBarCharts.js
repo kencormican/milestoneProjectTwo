@@ -49,23 +49,11 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
 
         var data = google.visualization.arrayToDataTable(barChartOneData, false);
         // assumes you have timestamps in column 0, and two data series (columns 1 and 2)
-        var view = new google.visualization.DataView(data);
-        view.setColumns([{
-            type: 'date',
-            label: data.getColumnLabel(0),
-            calc: function (dt, row) {
-                var timestamp = dt.getValue(row, 0) / 10000; // convert to milliseconds
-                return new Date(timestamp);
-            }
-        }, 1]);
-
-        /*var formatter_short = new google.visualization.DateFormat({formatType: 'short'});
-        formatter_short.format(data, 0);*/
 
         var options = {
             title: 'Country Wide Cases Over Time',
             hAxis: {
-                title: 'Date',
+                title: 'Covid Cases Timeline',
                 //format: 'h:mm a',
             },
             vAxis: {
@@ -90,7 +78,7 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
         var options = {
             title: 'Country Wide Deaths Over Time',
             hAxis: {
-                title: 'Date',
+                title: 'Covid Deaths Timeline',
                 //format: 'h:mm a',
             },
             vAxis: {
