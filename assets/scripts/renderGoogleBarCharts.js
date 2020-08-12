@@ -1,3 +1,6 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+// Modify Unix Timestamp to Local Date
+
 function fetchLocalDate (fromUnixDateFunc){
 
     // Extracts local date form Unix Timestamp
@@ -49,6 +52,7 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
     barChartOneData = fetchLocalDate(barChartOneUnixData);
     //console.log("This is the barChartOneData data inside setMapData(): ", barChartOneUnixData);
     barChartTwoData = fetchLocalDate(barChartTwoUnixData);
+    console.log("This is the barChartTwoData data inside setMapData(): ", barChartTwoData);
 
     google.charts.load("current", {
         packages: ["corechart"]
@@ -65,18 +69,21 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
 
     function drawTestBarChartOne() {
 
-
         var data = google.visualization.arrayToDataTable(barChartOneData, false);
         // assumes you have timestamps in column 0, and two data series (columns 1 and 2)
 
         var options = {
+            height: 400,
             title: 'Country Wide Cases Over Time',
+            legend: 'none',
+            //legend: { position: 'top', maxLines: 3 },
             hAxis: {
                 title: 'Covid Cases Timeline',
-                //format: 'h:mm a',
+                // ticks: [0,.3,.6,.9,1]
+                // format: 'h:mm a',
             },
             vAxis: {
-                title: 'Number of New Cases Per Day'
+                title: 'Number of New Cases Per Day'                
             }
         };
 
@@ -91,22 +98,30 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
     function drawTestBarChartTwo() {
 
 
-        var data = google.visualization.arrayToDataTable(barChartTwoData, false);
+        var data = google.visualization.arrayToDataTable(barChartTwoData, false);       
 
 
         var options = {
+            height: 400,
             title: 'Country Wide Deaths Over Time',
+            legend: 'none',
             hAxis: {
                 title: 'Covid Deaths Timeline',
-                //format: 'h:mm a',
+                //gridlines: {count: 5},
+                //ticks: [29/2/2020,26/5/2020],
+                //format: 'MMMM dd yy',
             },
+            
             vAxis: {
-                title: 'Number of New Deaths Per Day'
+                title: 'Number of New Deaths Per Day',
+                //ticks: [0,50,100]
             }
         };
 
-        var chart = new google.visualization.ColumnChart(
-            document.getElementById('ireland-total-deaths-graphed'));
+        //var view = new google.visualization.DataView(data);
+        //data.setColumnProperty(0,'type','date');
+
+              var chart = new google.visualization.ColumnChart(document.getElementById('ireland-total-deaths-graphed'));
 
         chart.draw(data, options);
     }
