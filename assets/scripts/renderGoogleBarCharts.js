@@ -1,3 +1,19 @@
+function fetchLocalDate (fromUnixDateFunc){
+
+    // Extracts local date form Unix Timestamp
+
+        for (i=1; i<fromUnixDateFunc.length; i++){
+        var unixTimestamp = fromUnixDateFunc[i][0];
+        var resetDate = new Date(unixTimestamp); 
+        fromUnixDateFunc[i][0] = resetDate.toLocaleDateString("en-IE");        
+    }
+        //console.log("this is inside fromUnixDateFunc fetchLocalDate(): ",fromUnixDateFunc);
+
+        return fromUnixDateFunc;
+
+}
+
+
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 // Bar Chart Data Collector
 
@@ -24,12 +40,15 @@ function parseIrlBarChartData(fromParseIrelandData) {
 
 function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
 
-    var barChartOneData = fromBarChartParseCases;
-    var barChartTwoData = fromBarChartParseDeaths;
+    var barChartOneUnixData = fromBarChartParseCases;
+    var barChartTwoUnixData = fromBarChartParseDeaths;
 
     //console.log("This is the barChartOneData data inside setMapData(): ", barChartOneData);
     //console.log("This is the barChartTwoData data inside setMapData(): ", barChartTwoData);
 
+    barChartOneData = fetchLocalDate(barChartOneUnixData);
+    //console.log("This is the barChartOneData data inside setMapData(): ", barChartOneUnixData);
+    barChartTwoData = fetchLocalDate(barChartTwoUnixData);
 
     google.charts.load("current", {
         packages: ["corechart"]
