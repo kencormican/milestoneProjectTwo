@@ -95,20 +95,10 @@ function parseTotalsCasesData(fromParseIrelandData) {
         }
     }); 
 
-
-    // Map fromParseIrelandData object to new object filtering Date, Cases & Deaths key:value pairs 
-    var dailyCasesObject = fromParseIrelandData.map(function (retrieveObjKeyValuePair) {
-        return {
-            "Date": retrieveObjKeyValuePair.attributes.Date,
-            "ConfirmedCovidCases": retrieveObjKeyValuePair.attributes.ConfirmedCovidCases,
-            "ConfirmedCovidDeaths": retrieveObjKeyValuePair.attributes.ConfirmedCovidDeaths
-        }
-    });     
-
     // Extract totalsCasesObject properties to 2D array
 
     totalsCasesObject.forEach(function (item) {
-        tableRows.push([item.Date, item.TotalConfirmedCovidCases, item.TotalCovidDeaths,item.ConfirmedCovidCases, item.ConfirmedCovidDeaths])
+        tableRows.push([item.Date, item.TotalConfirmedCovidCases, item.TotalCovidDeaths])
     });
 
     tableHeaders = parseTableHeaders(totalsCasesObject[0]);     // Pass 1st Index of totalsCasesObject to parseTableHeaders Function
