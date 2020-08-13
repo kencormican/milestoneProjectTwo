@@ -38,5 +38,6 @@ function processCSVData(fromCSVGet) {
     // Call parseCountyArrayForMap() and pass in formatted Array Data 
 
     parseCountyArrayForMap(typeFormatedCsvArrayData);
+    setTableChartData(typeFormatedCsvArrayData);
 }
 
