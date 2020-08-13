@@ -24,8 +24,6 @@ function parseIrlBarChartData(fromParseIrelandData) {
 
     console.log("parseIrlBarChartData function initiated")
 
-    //console.log("This is the fromParseIrelandData Array inside the parseIrlHeadlineData() function: ",fromParseIrelandData)
-
     var irlCasesBarChartData = fromParseIrelandData.map(function (item) {
         return (item.slice(0, 2));                                          // only retain upto item index 2 in subarray...(so indexes 0 & 1)
     });
@@ -46,28 +44,27 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
     var barChartOneUnixData = fromBarChartParseCases;
     var barChartTwoUnixData = fromBarChartParseDeaths;
 
+    //console.log("This is the barChartOneUnixData data inside setMapData(): ", barChartOneUnixData);
+    //console.log("This is the barChartTwoUnixData data inside setMapData(): ", barChartTwoUnixData);
+
+    barChartOneData = fetchLocalDate(barChartOneUnixData);                  // Call the fetchLocalDate function to convert unix timestamp to date
+    barChartTwoData = fetchLocalDate(barChartTwoUnixData);                  // Call the fetchLocalDate function to convert unix timestamp to date
+
     //console.log("This is the barChartOneData data inside setMapData(): ", barChartOneData);
     //console.log("This is the barChartTwoData data inside setMapData(): ", barChartTwoData);
 
-    barChartOneData = fetchLocalDate(barChartOneUnixData);
-    //console.log("This is the barChartOneData data inside setMapData(): ", barChartOneUnixData);
-    barChartTwoData = fetchLocalDate(barChartTwoUnixData);
-    console.log("This is the barChartTwoData data inside setMapData(): ", barChartTwoData);
-
     google.charts.load("current", {
-        packages: ["corechart"]
-        // Load Bar Chart package
+        packages: ["corechart"]                                             // Load Bar Chart package
     });
 
-    //google.charts.setOnLoadCallback(drawRegionsMap);
-    google.charts.setOnLoadCallback(drawTestBarChartOne);
-    google.charts.setOnLoadCallback(drawTestBarChartTwo);
+    google.charts.setOnLoadCallback(drawBarChartDailyCases);
+    google.charts.setOnLoadCallback(drawBarChartDailyDeaths);
 
 
 
-    // Declare function to draw Test Bar Chart One 
+    // Declare function to draw Bar Chart for Daily Confirmed Cases 
 
-    function drawTestBarChartOne() {
+    function drawBarChartDailyCases() {
 
         var data = google.visualization.arrayToDataTable(barChartOneData, false);
         // assumes you have timestamps in column 0, and two data series (columns 1 and 2)
@@ -94,8 +91,9 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
     }
 
 
-    // Declare function to draw Test Bar Chart Two 
-    function drawTestBarChartTwo() {
+    // Declare function to draw Bar Chart for Daily Confirmed Deaths
+     
+    function drawBarChartDailyDeaths() {
 
 
         var data = google.visualization.arrayToDataTable(barChartTwoData, false);       

@@ -27,10 +27,8 @@ function setMapData(fromMapArrayParse) {
 
 
         google.charts.load("current", {
-            packages: ["geochart"],
-            // Note: you will need to get a mapsApiKey for your project.
-            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-            mapsApiKey: Apikey,
+            packages: ["geochart"],                         // Load GeoChart Package
+            mapsApiKey: Apikey, 
 
         });
 
@@ -38,7 +36,6 @@ function setMapData(fromMapArrayParse) {
 
 
         // Declare GeoChart Function for Country Map
-
         function drawRegionsMap() {
 
             console.log("this is mapData inside drawRegionsMap() function: ", mapData);
@@ -50,10 +47,10 @@ function setMapData(fromMapArrayParse) {
             */
 
             var options = {
-                region: "IE",                                                 // This property sets the focus on Ireland
-                resolution: "provinces",                                      // This property sets the county boudaries
-                colorAxis: { colors: ['red', 'black', '#5b0000'] },         // LightRed(#f56967), DarkRed(#5b0000)
-                backgroundColor: 'white',
+                region: "IE",                                                   // This property sets the focus on Ireland
+                resolution: "provinces",                                        // This property sets the county boudaries
+                colorAxis: { colors: ['red', 'black', '#5b0000'] },             // LightRed(#f56967), DarkRed(#5b0000)
+                backgroundColor: 'white',   
                 datalessRegionColor: 'LightGrey',
                 defaultColor: '#f5f5f5',
             };

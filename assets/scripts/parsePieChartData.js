@@ -7,7 +7,7 @@ function parsePieChartCountryData(fromParseIrelandData) {
 
     var tableHeaders = [];                                                          // Array of Table Headers
     var tableRows = [];                                                             // Array of Table Rows
-    var pieChartCountryDataToArray = [];                                                   // Concatenated 2D array with header & row data
+    var pieChartCountryDataToArray = [];                                            // Concatenated 2D array with header & row data
 
     // Map fromParseIrelandData object to new object filtering all Age related key:value pairs 
     var pieChartCountryDataObject = fromParseIrelandData.map(function (retrieveObjKeyValuePair) {
@@ -42,15 +42,8 @@ function parsePieChartCountryData(fromParseIrelandData) {
 
     tableHeaders = parseTableHeaders(pieChartCountryDataObject[0]);     // Pass 1st Index of pieChartCountryDataObject to parseTableHeaders Function
 
-    var pieChartCountryDataToArray = lastTableRow;                         // Initialise pieChartCountryDataToArray with contents of tableRows array
+    var pieChartCountryDataToArray = lastTableRow;                      // Initialise pieChartCountryDataToArray with contents of tableRows array
     pieChartCountryDataToArray.unshift(tableHeaders);                   // Insert tableHeaders array into index 0 of pieChartCountryDataToArray
-
-    //$.makeArray(irelandDataToArray);
-
-    //console.log("This is the parsed totalsCasesObject: ", totalsCasesObject);
-    //console.log("This is tableRows inside parseIrelandData(): ", tableRows);
-    //console.log("This is tableHeaders inside parseIrelandData(): ", tableHeaders);
-    //console.log("This is totalsCasesToArray inside parseTotalsCasesData(): ", totalsCasesToArray);
 
     return pieChartCountryDataToArray;    
 

@@ -1,3 +1,6 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
+// Transpose function to alter array for Google Pie chart loader constraints
+
 function transpose(matrix) {
   const rows = matrix.length
   const cols = matrix[0].length
@@ -15,15 +18,12 @@ function transpose(matrix) {
 }
 
 
-
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 // Pie Chart Country Data Collector
 
 function parseIrlPieChartData(fromParseIrelandData) {
 
     console.log("parseIrlPieChartData function initiated")
-
-    //console.log("This is the fromParseIrelandData Array inside the parseIrlPieChartData() function: ",fromParseIrelandData)
 
     var irlAgePieChartData = fromParseIrelandData.map(function (item) {
         return (item.slice(0, 8));                                          // only retain upto item index 8 in subarray...(so indexes 0 to 7)
@@ -42,62 +42,57 @@ function parseIrlPieChartData(fromParseIrelandData) {
 
 function setCountryPieChartData(fromAgePieChartCases, fromGenderPieChartCases) {
 
-    pieChartAgeData = transpose(fromAgePieChartCases);
-    pieChartGenderData = transpose(fromGenderPieChartCases);
+    pieChartAgeData = transpose(fromAgePieChartCases);                          // Call Transpose function passing in fromAgePieChartCases
+    pieChartGenderData = transpose(fromGenderPieChartCases);                    // Call Transpose function passing in fromGenderPieChartCases
 
     console.log("This is the pieChartAgeData data inside setCountryPieChartData(): ", pieChartAgeData);
     console.log("This is the pieChartGenderData data inside setCountryPieChartData(): ", pieChartGenderData);
 
 
-
-
     google.charts.load("current", {
-        packages: ["corechart"]
-        // Load Pie Chart package
+        packages: ["corechart"]             // Load Pie Chart package
     });
 
-    //google.charts.setOnLoadCallback(drawRegionsMap);
+ 
     google.charts.setOnLoadCallback(drawPieChartAge);
     google.charts.setOnLoadCallback(drawPieChartGender);
 
-
-
-    // Declare function to draw Test Pie Chart Age 
+    // Declare function to draw Age Pie Chart 
 
     function drawPieChartAge() {
 
-        var data = google.visualization.arrayToDataTable(pieChartAgeData, true);
+        var data = google.visualization.arrayToDataTable(pieChartAgeData, true);            // true means no header row
 
-        // Set options for Pie Chart Two.
+        // Set options for Age Pie Chart.
         var options = {
             title: 'Age Breakdown ',
-            width: 400,
-            height: 300
+            pieHole: 0.4,
+            //width: 400,
+            height: 600
         };
 
- 
-        // Instantiate and draw the chart for Pie Chart Two
+         // Instantiate and draw the chart for Age Pie Chart
 
         var chart = new google.visualization.PieChart(document.getElementById('ireland-countrywide-chart'));
         chart.draw(data, options);
     }
 
 
-    // Declare function to draw Test Bar Chart Two 
-    // Declare function to draw Test Pie Chart Age 
+    // Declare function to draw Pie Chart Gender 
 
     function drawPieChartGender() {
 
-        var data = google.visualization.arrayToDataTable(pieChartGenderData, true);
+        var data = google.visualization.arrayToDataTable(pieChartGenderData, true);         // true means no header row
 
-        // Set options for Pie Chart Two.
+        // Set options for Gender Pie Chart.
         var options = {
             title: 'Gender Breakdown ',
-            width: 400,
-            height: 300
+            pieHole: 0.4,
+            //width: 400,
+            height: 600
         };
 
- 
+   
         // Instantiate and draw the chart for Pie Chart Gender
         var chart = new google.visualization.PieChart(document.getElementById('ireland-county-chart'));
         chart.draw(data, options);
