@@ -16,7 +16,7 @@ function fetchGeoHiveDataSet() {
         function (response) {
             var irelandDataObject = response;                             // set irelandData to store API response
             //console.log(irelandDataObject);
-            //console.dir(irelandDataObject);
+            console.dir(irelandDataObject);
             $("#ireland-data").html(parseIrelandData(irelandDataObject)); // placeholder for calling parseIrelandData function passing ing irelandData response
         },
         function (errorResponse) {                                  // 2nd argument of $.when()$.then() promise for Error Responses
@@ -49,9 +49,13 @@ function parseIrelandData(irelandDataObjFromFetch) {
 
     var totalsCasesArray = parseTotalsCasesData(featuresData);
     var dailyCasesArray = parseDailyCasesData(featuresData);
+    var pieChartCountryArray = parsePieChartCountryData(featuresData);
 
     parseIrlHeadlineData(totalsCasesArray);                   // Call parseIrlHeadlineData passing in totalsCasesArray  
-    parseIrlBarChartData(dailyCasesArray);                   // Call parseIrlBarChartData passing in dailyCasesArray             
+    parseIrlBarChartData(dailyCasesArray);                   // Call parseIrlBarChartData passing in dailyCasesArray        
+    parseIrlPieChartData(pieChartCountryArray);                   // Call parseIrlBarChartData passing in dailyCasesArray       
+    console.log("This is the pieChartCountryArray inside the parseIrelandData() function: ", pieChartCountryArray);
+
 }
 
 
