@@ -1,0 +1,75 @@
+/*Container Colours..........................*/
+
+.bg-colour-black {
+		background-color:#000;
+}
+
+.bg-colour-charcoal {
+		background-color:#4a4a4f;
+}
+
+	
+.bg-colour-white {
+		background-color:#fff;
+}
+
+.bg-colour-offwhite {
+		background-color:#fafafa;
+}
+
+
+/*Generic Typography Styles.................*/
+	
+.uppercase {
+    text-transform: uppercase;
+}
+
+.centered {					/* center aligning  text */
+    text-align: center;
+}
+
+
+/*Header Styles............................*/
+
+header {
+    color: white;
+    padding-bottom: 20px;
+    
+}
+
+footer {
+    color: white;
+    padding-top: 20px;
+    
+}
+
+
+/*
+header.h1 {
+
+margin: 60px;
+
+}*/
+
+/*header.container-fluid.no-gutters{
+        margin-top: 0;
+    margin-bottom: 0;
+}*/
+
+
+
+/*Headline Styles...........................*/
+/*
+#article-headline-data {
+    padding: 40px;
+}
+*/
+/*Map styles...............................*/
+
+/*#map{
+  /*position: relative;
+  top: 0;
+  bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+}*/

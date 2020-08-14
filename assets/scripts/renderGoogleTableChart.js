@@ -13,23 +13,32 @@ function setTableChartData(fromProcessCSVData) {
     });
 
 
-    google.charts.setOnLoadCallback(drawCountyTableChart);
+    google.charts.setOnLoadCallback(drawCountyTable);
 
 
     // Declare function to draw the County Table Chart
 
-    function drawCountyTableChart() {
+    function drawCountyTable() {
 
         var data = google.visualization.arrayToDataTable(countyTableChartData, false);
 
         var options = {
-            title: 'County Breakdown of Covid Cases and Deaths'            
+            //title: 'County Breakdown of Covid Cases and Deaths'            
         };
 
-        var chart = new google.visualization.Table(
-            document.getElementById('county-data-table'));
+        /*chartArea: {
+          height: chartAreaHeight,
+          top: "100",
+          right: "100",
+          bottom: "100",
+          left: "100"
+        },*/
 
-        chart.draw(data, options);
+        var table = new google.visualization.Table(document.getElementById('county-data-table'));
+        //table.draw(data, {showRowNumber: true, width: '100%', height: chartHeight, allowHtml: true});
+        table.draw(data, {showRowNumber: true, width: '100%', height: '100%',allowHtml: true});
+
+        //chart.draw(data, options);
     }
 
 }

@@ -5,6 +5,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!--Bootstrap 4 CSS Library-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="assets/css/style.css">
     
     <title>Ireland COVID Statistics | by Ken Cormican</title>
 
@@ -12,56 +14,100 @@
 
 <body>
 
-	<header>
-		<h1>Ireland | COVID-19 Disease Tracker</h1>
+	<header class="container-fluid no-gutters">
+
+    <div class = "row bg-colour-black centered">
+        <div class = "col">
+            <h1>Ireland | COVID-19 Disease Tracker</h1>
+        </div>
+    </div>
+        
 	</header>
-	<article id="section-headline-data">
-		<div id="headline-data"></div>
+
+	<article id="article-headline-data" class="row centered">
+		<div id="headline-data" class = "col"></div>
 	</article>
-	<section id="section-map" >
-		<div>
-			<h3 class="section-heading-map uppercase">Ireland Corona Virus Cases</h3>
+
+	<section class="section-map container-fluid">
+		<div id= "section-heading-map" class="row centered">
+        <div class = "col">
+			<h3 class ="uppercase">Ireland Corona Virus Cases</h3>
 			<p>
 				Hover over each County Boundary to view County Details
 			</p>
+            </div>
 		</div>
-		<div id="map"></div>
-	</section>
-	<section id="section-graphs">
-		<div>
-			<h3 class="section-heading-graphs uppercase">Countrywide Cases | Daily Statistics</h3>
-				<p>
-					Graph Number One plots the Confirmed Cases over time.
-                    Graph Number Two plots the Confirmed Deaths over time.
-				</p>
-	
-				<div id="ireland-total-cases-graphed"></div>
-                <div id="ireland-total-deaths-graphed"></div>	
-		</div>
-		<div id="ireland-data"></div>
-	</section>
-	<section id="section-county-table" >
-		<div>
-			<h3 class="section-heading-county-table uppercase">County Breakdown of Confirmed COVID Cases</h3>
-			<p>
-				Select Show More to expand Table
-			</p>
-		</div>
-		<div id="county-data-table"></div>
+        <div class="row">
+		<div id="map" class="col-12 col-md-8 col-lg-8 ml-auto mr-auto"></div>
+        </div>
 	</section>
 
-	<section id="section-pie-charts">
-		<div>
-			<h3 class="section-heading-graphs uppercase">Statistics Breakdown</h3>
-				<p>
-					Pie Chart One provides statistics for the Whole Country 
-                    Pie Chart Two provides statistics for the selected County 
-				</p>
+	<section class="section-graphs container-fluid d-none d-md-block">
+		<div class="row">
 	
-				<div id="ireland-countrywide-chart"></div>
-                <div id="ireland-county-chart"></div>	
+			<div class="col-md-8 col-lg-12 centered">
+				<h3 class="section-heading-graphs uppercase">Countrywide Cases | Daily Statistics</h3>
+				<p>
+					Graph Number One plots Countrywide Daily Confirmed Cases over time.<br>
+					Graph Number Two plots Countrywide Daily Confirmed Deaths over time.
+				</p>
+			</div>
+		</div>
+		<div class="row">
+	
+			<div class="col-md-8 col-lg-12">
+				<div id="ireland-total-cases-graphed"></div>
+			</div>
+		</div>
+		<div class="row">
+	
+			<div class="col-md-8 col-lg-12">
+				<div id="ireland-total-deaths-graphed"></div>
+			</div>
+	
+		</div>
+	
+	</section>
+	<section class ="section-county-table container-fluid ml-auto mr-auto" >
+        <div class="row d-none d-lg-block centered">
+            <div class="col-lg-12 ">
+                <h3 class="section-heading-county-table uppercase">County Breakdown of Confirmed COVID Cases</h3>
+                <p>
+                    Select Show More to expand Table
+                </p>
+            </div>
+        </div>
+        <div class="row d-none d-lg-block">
+            <div id="county-data-table" class="col-lg-8 ml-auto mr-auto"></div>
+        </div>
+	</section>
+
+	<section class="section-pie-charts container-fluid">
+		<div class="row centered">
+			<div class="col-12">
+				<h3 class="section-heading-graphs centered uppercase">Statistics Breakdown</h3>
+				<p>
+					Pie Chart One provides statistics for the Whole Country <br>
+				    Pie Chart Two provides statistics for the selected County
+				</p>
+			</div>
+		</div>
+		<div class="row centered">
+	
+			<div id="ireland-countrywide-chart" class="col-12 col-md-6"></div>
+			<div id="ireland-county-chart" class="col-12 col-md-6"></div>
 		</div>
 	</section>
+
+    	<footer class="container-fluid no-gutters">
+
+    <div class = "row bg-colour-black centered">
+        <div class = "col-12">
+            Link to CSO Covid Page
+        </div>
+    </footer>
+        
+
 
  
     <!----------------------------------------Load JS libraries------------------------------------------------->
