@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Font Awesome CDN -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	
     <!--Bootstrap 4 CSS Library-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -14,12 +17,50 @@
 
 <body>
 
-	<header class="container-fluid no-gutters">
+	<header id="header-container"  class="container-fluid no-gutters">
 
-    <div class = "row bg-colour-black centered">
-        <div class = "col">
-            <h1>Ireland | COVID-19 Disease Tracker</h1>
-        </div>
+	<div class="row bg-colour-black fixed-top">
+		<div class="col-2 fixed-top">
+			<div class="collapse mb-auto" id="navbarToggleExternalContent">
+				<div class="bg-colour-black p-4">
+					<!--<h5 class="text-white h4">Collapsed content</h5>
+									<span class="text-muted">Toggleable via the navbar brand.</span>-->
+					<ul class="navbar-nav ">
+						<!-- burger nav icon right & top aligned -->
+						<li class="nav-item active">
+							<a class="nav-link" href="#header-container"><i class="fas fa-home" aria-hidden="true"></i></a>
+							<span class="sr-only">Home</span>
+							<span class="sr-only">(current)</span>
+							<!-- Home icon  with accessibility options applied -->
+						</li>
+                        
+						<li class="nav-item">
+							<a class="nav-link" href="#section-map">Heat Map</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#section-graphs">Confirmed Cases Timeline</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#ireland-total-deaths-graphed">Confirmed Deaths Timeline</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#section-county-table">County Data</a>
+                        </li>
+                        <li class="nav-item">
+							<a class="nav-link" href="#section-pie-charts ">Statistics Breakdown</a>
+                        </li>
+					</ul>
+				</div>
+			</div>
+			<nav class="navbar navbar-dark bg-colour-black">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+			</nav>
+		</div>
+		<div class="col-12 centered">
+			<h1>Ireland | COVID-19 Disease Tracker</h1>
+		</div>
     </div>
         
 	</header>
@@ -28,21 +69,21 @@
 		<div id="headline-data" class = "col"></div>
 	</article>
 
-	<section class="section-map container-fluid">
+	<section id="section-map" class="container-fluid">
 		<div id= "section-heading-map" class="row centered">
         <div class = "col">
 			<h3 class ="uppercase">Ireland Corona Virus Cases</h3>
 			<p>
-				Hover over each County Boundary to view County Details
+				Hover over County to view County Specific Statistics
 			</p>
             </div>
 		</div>
         <div class="row">
-		<div id="map" class="col-12 col-md-8 col-lg-8 ml-auto mr-auto"></div>
+		<div id="map" class="col-12 col-md-8 col-lg-8 mx-auto"></div>
         </div>
 	</section>
 
-	<section class="section-graphs container-fluid d-none d-md-block">
+	<section id="section-graphs" class="container-fluid d-none d-md-block">
 		<div class="row">
 	
 			<div class="col-md-8 col-lg-12 centered">
@@ -56,56 +97,103 @@
 		<div class="row">
 	
 			<div class="col-md-8 col-lg-12">
-				<div id="ireland-total-cases-graphed"></div>
+				<div id="ireland-total-cases-graphed" class="mx-auto"></div>
 			</div>
 		</div>
 		<div class="row">
 	
 			<div class="col-md-8 col-lg-12">
-				<div id="ireland-total-deaths-graphed"></div>
+				<div id="ireland-total-deaths-graphed" class="mx-auto"></div>
 			</div>
 	
 		</div>
 	
 	</section>
-	<section class ="section-county-table container-fluid ml-auto mr-auto" >
+	<section id="section-county-table" class ="container-fluid mx-auto" >
         <div class="row d-none d-lg-block centered">
             <div class="col-lg-12 ">
                 <h3 class="section-heading-county-table uppercase">County Breakdown of Confirmed COVID Cases</h3>
                 <p>
-                    Select Show More to expand Table
+                    Select Show More to Expand the Table
                 </p>
             </div>
         </div>
-        <div class="row d-none d-lg-block">
-            <div id="county-data-table" class="col-lg-8 ml-auto mr-auto"></div>
+        <div class="county-table-row row d-none d-lg-block">
+            <div id="county-data-table" class="col-lg-8 mx-auto">
+            </div>
+            <div class="table-slider"></div>
+        </div>
+        <div class="read-more col-lg-8 mx-auto">
+            <button class="table-slider-button btn-lg btn-secondary uppercase mx-auto"><strong>Show More</strong></button>
         </div>
 	</section>
 
-	<section class="section-pie-charts container-fluid">
+	<section id="section-pie-charts" class="container-fluid">
 		<div class="row centered">
 			<div class="col-12">
-				<h3 class="section-heading-graphs centered uppercase">Statistics Breakdown</h3>
+				<h3 class="section-heading-graphs centered uppercase">Countrywide Statistics Breakdown</h3>
 				<p>
-					Pie Chart One provides statistics for the Whole Country <br>
-				    Pie Chart Two provides statistics for the selected County
+					Pie Chart One provides Countrywise statistics based on Age & Gender<br>
+				    Pie Chart Two provides Countrywise statistics based on Hospitalisations and Transmission Type
 				</p>
 			</div>
 		</div>
-		<div class="row centered">
-	
-			<div id="ireland-countrywide-chart" class="col-12 col-md-6"></div>
-			<div id="ireland-county-chart" class="col-12 col-md-6"></div>
+		<div class="select-headings row">
+
+            <div class = "col-12 col-md-6">
+            <h5 class = "centered">Select Statistics Type | Age or Gender</h5>
+            </div>
+            <div class = "col-12 col-md-6">
+            <h5 class = "centered">Select Statistics Type | Hospital Cases or Transmission Type</h5>
+            </div>
 		</div>
+ 		<div class="select-dropdown row">       
+
+            <div class = "col-12 col-md-6 d-flex justify-content-center"> <!-- d-flex required to center dropdowns-->
+            <th class = "">
+            <select id="ageOrGenderSelect" class="">
+            <option selected disabled>Choose</option>
+            <option value="ageChart">Age</option> 
+            <option value="genderChart">Gender</option> 
+            </select>
+            </th>
+            </div>
+
+			<div class="col-12 col-md-6 d-flex justify-content-center">
+				<!-- d-flex required to center dropdowns-->
+				<th class="">
+					<select id="hospitalOrTransmissionSelect" class="">
+			            <option selected disabled>Choose</option>
+			            <option value="hospitalChart">Hospital</option> 
+			            <option value="transmissionChart">Transmission</option> 
+			            </select>
+				</th>
+			</div>
+            			<div class="row"></div>
+			<div id="ageOrGenderChart-div" class="col-12 col-md-5 offset-md-1"></div>
+            <div id="hospitalOrTransmissionChart-div" class="col-12 col-md-5 offset-md-1"></div>
+            </div>
+			
+			
+			</div>
+	
+
+		
 	</section>
 
-    	<footer class="container-fluid no-gutters">
-
-    <div class = "row bg-colour-black centered">
-        <div class = "col-12">
-            Link to CSO Covid Page
-        </div>
-    </footer>
+		<footer class="container-fluid no-gutters">
+		
+			<div class="row bg-colour-black centered">
+		
+				<div class="footer-div col-12">
+					<a target="_blank" href="https://www.cso.ie/en/releasesandpublications/ep/p-covid19/covid-19informationhub/">
+						<i class="footer-icon fas fa-university" aria-hidden="true"></i>
+						<span>Link to CSO Covid Page</span>
+					</a>
+				</div>
+		
+			</div>
+		</footer>
         
 
 
@@ -134,15 +222,13 @@
     
 	<script type="text/javascript" src="assets/scripts/obfuscatedKey.js"></script>
 
-
-    <!-- Load fetch and parse CountryWide data script-->  
-
-    <script type="text/javascript" src="assets/scripts/getCountryWideData.js"></script>
-
     <!-- Load fetch and parse County CSV data script-->
   
 	<script type="text/javascript" src="assets/scripts/countyCsvDatatoArrayParser.js"></script>
 
+    <!-- Load fetch and parse CountryWide data script-->  
+
+    <script type="text/javascript" src="assets/scripts/getCountryWideData.js"></script>
 
     <!-- Load parse pie Chart Data script-->
   
@@ -156,13 +242,13 @@
 
     <script type="text/javascript" src="assets/scripts/renderGoogleBarCharts.js"></script>
 
-    <!-- Load Google CountryWide Pie Charts API script -->
-
-    <script type="text/javascript" src="assets/scripts/renderGoogleCountryPieCharts.js"></script>
-
     <!-- Load Google County Table Chart API script -->
 
     <script type="text/javascript" src="assets/scripts/renderGoogleTableChart.js"></script>
+
+    <!-- Load Google CountryWide Pie Charts API script -->
+
+    <script type="text/javascript" src="assets/scripts/renderGooglePieCharts.js"></script>
 
 
 </body>

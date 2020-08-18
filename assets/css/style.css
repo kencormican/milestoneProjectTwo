@@ -1,3 +1,46 @@
+.navbar-nav {
+    width: 100%;
+    text-align: left;
+    
+  }
+
+  /*.navbar-toggler-icon {
+      vertical-align: bottom;
+  }*/
+
+.navbar button {
+
+    margin-bottom: 25px;
+    margin-top: 25px;
+
+}
+
+  .navbar-dark :hover {
+	/*Change bootstrap nav hover defaults*/
+	border-color: #dee2e6;
+	color: #dee2e6;
+}
+
+a:hover {
+          color: #7f7f88;
+    }
+
+ a {
+          color: white;
+    }
+
+body {
+  scroll-padding-top: 70px; /* height of fixed header */
+}
+
+html {
+  scroll-padding-top: 70px; /* height of fixed header */
+}
+
+#headline-data {
+    margin-top: 70px;
+}
+
 /*Background Colours..........................*/
 
 .bg-colour-black {
@@ -159,9 +202,40 @@ footer {
 }
 
 .footer-div {
-
     margin-bottom:20px;
     margin-top:20px;
+}
+.footer-div a {
+    font-size: 29px;
+    text-decoration: none;
+}
 
+.footer-icon {
+    width: 50px;
+    height: 50px;
+    padding: 12px 0;
+    border-radius: 50%; 						
+    font-size: 29px; 							
+    line-height: 29px;						
+    text-align: center;
+
+    color: black;							
+    background: white;						
+    transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+}
+
+.footer-icon:hover {
+	/* icon responsive hover */
+	background-color: black; /* Hex Colour #83838e47 changed to RGBa value for IE rendering */
+	color:#4a4a4f;;
+}
+
+.footer-div a:hover {
+    color:#4a4a4f;;
 
 }
+
