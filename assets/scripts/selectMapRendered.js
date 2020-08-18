@@ -1,4 +1,24 @@
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
+// Interactive Table Function animates table height on button click
+
+  $(".table-slider-button").click(function () {
+
+     if ($(".county-table-row").css("height") === "290px") {
+          $(".county-table-row").animate({ height: "+=400" }, 1000)
+          $(".table-slider").fadeTo(1000,0);
+     }
+      if ($(".county-table-row").css("height") != "290px") {
+          $(".county-table-row").animate({ height: "290px" }, 1000);
+          $(".table-slider").fadeTo(1000,0.9);
+     }
+    
+  });
+
+
+
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------*/
 // Transpose function to alter array for Google Pie chart loader constraints
 
 function transpose(matrix) {
@@ -69,6 +89,7 @@ function setCountryPieChartData(fromAgePieChartCases, fromGenderPieChartCases) {
 
     //testSelect(test3);
 
+// Render Initial Graph with Age Data
 changeChartAgeorGender("Age", test2, test3);
     
 document.getElementById('ageOrGenderSelect').addEventListener('change', getSelection, false);
@@ -98,6 +119,10 @@ function changeChartAgeorGender(value, pieChartAgeData,pieChartGenderData) {
         var selValue = value;
         console.log(selValue);
 
+        google.charts.load("current", {
+            packages: ["corechart"]             // Load Pie Chart package
+            });
+
         google.charts.setOnLoadCallback(drawChart);
 
         function drawChart(data, options) {
@@ -107,31 +132,37 @@ function changeChartAgeorGender(value, pieChartAgeData,pieChartGenderData) {
                 title: 'Age Breakdown ',
                 pieHole: 0.4,
                 //width: 'auto', 
-                height: 400
+                height: 400,
+                //animation:{"startup": true}
+                
             };
             var optionsGenderInDraw = {
                 title: 'Gender Breakdown ',
                 pieHole: 0.4,
                 //width: 'auto', 
-                height: 400
+                height: 400,
+                //animation:{ "startup": true}
+                
             };
-            var chart = new google.visualization.PieChart(document.getElementById('ageOrGenderChart-div'));
-            /*    data = dataAgeInDraw;
-                options = optionsAgeInDraw;*/
+
+            
+
+            // set Gender or Age Chart redering options before chart draw
 
             if (selValue == 'Age') {
                 data = dataAgeInDraw;
-                options = optionsAgeInDraw;
+                options = optionsAgeInDraw;                
             }
             else if (selValue == 'Gender') {
                 data = dataGenderInDraw;
-                options = optionsGenderInDraw;
+                options = optionsGenderInDraw;                
             }
+
+            var chart = new google.visualization.PieChart(document.getElementById('ageOrGenderChart-div'));
 
             chart.draw(data, options);
 
         };
-
 
     }
 
