@@ -129,8 +129,22 @@ margin-top:40px;
 }
 
 
+/* Pie Chart Section Styles.........*/
+
+.section-heading-graphs {
+
+    margin-top:40px;
+}
+
+.select-headings {
+
+    margin-top:40px;
+
+}
+
 
 /* Pie Chart dropdown Menu Styles.........*/
+
 
 select {
 
@@ -142,4 +156,12 @@ footer {
     color: white;
     padding-top: 20px;
     
+}
+
+.footer-div {
+
+    margin-bottom:20px;
+    margin-top:20px;
+
+
 }

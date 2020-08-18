@@ -2,8 +2,16 @@ $(document).ready(fetchGeoHiveDataSet); // On document ready initiate fetchGeoHi
 
 // API CountryWide Query URL Filtered for Daily Cases, Deaths, Hospitaluised Cases, Gender & Age Range
 // Response to be used for Google HeatMAP, headline info, graphs and pie charts
-const countryWideURL =
+const countryWideURL = "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=Date,ConfirmedCovidCases,TotalConfirmedCovidCases,ConfirmedCovidDeaths,TotalCovidDeaths,CovidCasesConfirmed,HospitalisedCovidCases,RequiringICUCovidCases,Male,Female,Unknown,Aged1,Aged1to4,Aged5to14,Aged15to24,Aged25to34,Aged35to44,Aged45to54,Aged55to64,Aged65up,CommunityTransmission,CloseContact,TravelAbroad,FID&outSR=4326&f=json";
+
+/*
+All
+"https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json";
+
+/*
     "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=Date,ConfirmedCovidCases,TotalConfirmedCovidCases,ConfirmedCovidDeaths,TotalCovidDeaths,CovidCasesConfirmed,HospitalisedCovidCases,RequiringICUCovidCases,Male,Female,Unknown,Aged1,Aged1to4,Aged5to14,Aged15to24,Aged25to34,Aged35to44,Aged45to54,Aged55to64,Aged65up,Median_Age,FID&outSR=4326&f=json";
+
+*/
 
 
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
@@ -187,8 +195,8 @@ function parseIrlHeadlineData(fromParseIrelandData) {
     headlineData.push(fromParseIrelandData[fromParseIrelandData.length - 1][2]);    //Insert 3rd Index of last array 
 
     $("#headline-data").html(`
-        <p>Total Confirmed Covid Cases: ${headlineData[0]}</p>
-        <p>Total Covid Deaths: ${headlineData[1]}</p>`
+        <h2>Total Confirmed Covid Cases: ${headlineData[0]}</h2>
+        <h2>Total Covid Deaths: ${headlineData[1]}</h2>`
     );
 
     //console.log("This is the headlineData Array inside the parseIrlHeadlineData() function: ", headlineData);

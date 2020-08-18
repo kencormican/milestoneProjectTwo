@@ -1,24 +1,4 @@
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
-// Interactive Table Function animates table height on button click
-
-  $(".table-slider-button").click(function () {
-
-     if ($(".county-table-row").css("height") === "290px") {
-          $(".county-table-row").animate({ height: "+=400" }, 1000)
-          $(".table-slider").fadeTo(1000,0);
-     }
-      if ($(".county-table-row").css("height") != "290px") {
-          $(".county-table-row").animate({ height: "290px" }, 1000);
-          $(".table-slider").fadeTo(1000,0.9);
-     }
-    
-  });
-
-
-
-
-
-/*----------------------------------------------------------------------------------------------------------------------------------------*/
 // Transpose function to alter array for Google Pie chart loader constraints
 
 function transpose(matrix) {
@@ -53,117 +33,154 @@ function parseIrlPieChartData(fromParseIrelandData) {
         return (item.slice(8, 11));                                         // retains indexes 8,9 & 10)
     });
 
+    var irlHospitalPieChartData = fromParseIrelandData.map(function (item) {
+        return (item.slice(11, 13));                                         // retains indexes 11 & 12)
+    });
+
+    var irlTransmissionPieChartData = fromParseIrelandData.map(function (item) {
+        return (item.slice(13, 16));                                         // retains indexes 13,14 & 15)
+    });
+
+
     console.log("This is the irlAgePieChartData Array inside the parseIrlPieChartData() function: ", irlAgePieChartData);
     console.log("This is the irlGenderPieChartData Array inside the irlGenderPieChartData() function: ", irlGenderPieChartData);
+    console.log("This is the irlHospitalPieChartData Array inside the irlGenderPieChartData() function: ", irlHospitalPieChartData);
+    console.log("This is the irlTransmissionPieChartData Array inside the irlGenderPieChartData() function: ", irlTransmissionPieChartData);
 
-    setCountryPieChartData(irlAgePieChartData, irlGenderPieChartData);
+    setCountryPieChartData(irlAgePieChartData, irlGenderPieChartData, irlHospitalPieChartData, irlTransmissionPieChartData);
 }
 
 
-
-function setCountryPieChartData(fromAgePieChartCases, fromGenderPieChartCases) {
+function setCountryPieChartData(fromAgePieChartCases, fromGenderPieChartCases,
+    fromHospitalPieChartCases, fromTransmissionPieChartCases) {
 
     pieChartAgeData = transpose(fromAgePieChartCases);                          // Call Transpose function passing in fromAgePieChartCases
     pieChartGenderData = transpose(fromGenderPieChartCases);                    // Call Transpose function passing in fromGenderPieChartCases
+    pieChartHospitalData = transpose(fromHospitalPieChartCases);                // Call Transpose function passing in fromHospitalPieChartCases
+    pieChartTransmissionData = transpose(fromTransmissionPieChartCases);        // Call Transpose function passing in fromTransmissionPieChartCases
 
     console.log("This is the pieChartAgeData data inside setCountryPieChartData(): ", pieChartAgeData);
     console.log("This is the pieChartGenderData data inside setCountryPieChartData(): ", pieChartGenderData);
+    console.log("This is the pieChartHospitalData data inside setCountryPieChartData(): ", pieChartHospitalData);
+    console.log("This is the pieChartTransmissionData data inside setCountryPieChartData(): ", pieChartTransmissionData);
 
-    var test2 = [["Aged1to4", 157],
-    ["Aged5to14", 419],
-    ["Aged15to24", 2186],
-    ["Aged25to34", 4661],
-    ["Aged35to44", 4753],
-    ["Aged45to54", 4791],
-    ["Aged55to64", 3356],
-    ["Aged65up", 6567],
-    ["Aged65up", 6567]];
+    // Render default Age/Gender Graph with Age Data
+    drawChartAgeOrGender("ageChart", pieChartAgeData, pieChartGenderData);
 
-    var test3 = [["Male", 11823],
-    ["Female", 15340],
-    ["Unknown", 28]];
+    // Render default Hospital/Transmission Graph with Hospital Data
+    drawHospitalOrTransmission("hospitalChart", pieChartHospitalData, pieChartTransmissionData);
 
+    // Event Listener for Age/Gender DropDown
+    document.getElementById('ageOrGenderSelect').addEventListener('change', getAgeGenderSelection, false);
 
-    console.log("this is test2", test2)
-    console.log("this is test3", test3)
+    // Event Listener for Hospital/Transmission DropDown
+    document.getElementById('hospitalOrTransmissionSelect').addEventListener('change', getHospitalTransmissionSelection, false);
 
-    //testSelect(test3);
-
-// Render Initial Graph with Age Data
-changeChartAgeorGender("Age", test2, test3);
-    
-document.getElementById('ageOrGenderSelect').addEventListener('change', getSelection, false);
-
-
-function getSelection() {
-    console.log("Hello this is getSelection")
-    var value = this.options[this.selectedIndex].text; //note was .value
-    changeChartAgeorGender(value, test2, test3);
-}
-
-
-}
-
-
-
-
-function changeChartAgeorGender(value, pieChartAgeData,pieChartGenderData) {
-
-        console.log("This is the pieChartAgeData data inside changeChartAgeorGender(): ", pieChartAgeData);
-        console.log("This is the pieChartGenderData data inside changeChartAgeorGender(): ", pieChartGenderData);
-
-        /*var listbox = document.getElementById("ageOrGenderSelect");
-        var selIndex = listbox.selectedIndex;
-        var selValue = listbox.options[selIndex].value;
-        var selText = listbox.options[selIndex].text;*/
-        var selValue = value;
-        console.log(selValue);
-
-        google.charts.load("current", {
-            packages: ["corechart"]             // Load Pie Chart package
-            });
-
-        google.charts.setOnLoadCallback(drawChart);
-
-        function drawChart(data, options) {
-            var dataAgeInDraw = google.visualization.arrayToDataTable(pieChartAgeData, true);
-            var dataGenderInDraw = google.visualization.arrayToDataTable(pieChartGenderData, true);   
-            var optionsAgeInDraw = {
-                title: 'Age Breakdown ',
-                pieHole: 0.4,
-                //width: 'auto', 
-                height: 400,
-                //animation:{"startup": true}
-                
-            };
-            var optionsGenderInDraw = {
-                title: 'Gender Breakdown ',
-                pieHole: 0.4,
-                //width: 'auto', 
-                height: 400,
-                //animation:{ "startup": true}
-                
-            };
-
-            
-
-            // set Gender or Age Chart redering options before chart draw
-
-            if (selValue == 'Age') {
-                data = dataAgeInDraw;
-                options = optionsAgeInDraw;                
-            }
-            else if (selValue == 'Gender') {
-                data = dataGenderInDraw;
-                options = optionsGenderInDraw;                
-            }
-
-            var chart = new google.visualization.PieChart(document.getElementById('ageOrGenderChart-div'));
-
-            chart.draw(data, options);
-
-        };
-
+    // Define getAgeGenderSelection() function
+    function getAgeGenderSelection() {
+        console.log("getAgeGenderSelection function initiated")
+        var value = this.options[this.selectedIndex].value; //note was .value
+        drawChartAgeOrGender(value, pieChartAgeData, pieChartGenderData);
     }
 
+    // Define getHospitalTransmissionSelection() function
+    function getHospitalTransmissionSelection() {
+        console.log("getHospitalTransmissionSelection function initiated")
+        var value = this.options[this.selectedIndex].value; //note was .value
+        drawHospitalOrTransmission(value, pieChartHospitalData, pieChartTransmissionData);
+    }
+}
+
+google.charts.load("current", {
+    packages: ["corechart"]             // Load Pie Chart package
+});
+
+
+function drawChartAgeOrGender(value, pieChartAgeData, pieChartGenderData) {
+
+    console.log("This is the pieChartAgeData data inside drawChartAgeOrGender(): ", pieChartAgeData);
+    console.log("This is the pieChartGenderData data inside drawChartAgeOrGender(): ", pieChartGenderData);
+    var selValue = value;
+    console.log(selValue);
+
+
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart(data, options) {
+        var dataAgeInDraw = google.visualization.arrayToDataTable(pieChartAgeData, true);
+        var dataGenderInDraw = google.visualization.arrayToDataTable(pieChartGenderData, true);
+        var optionsAgeInDraw = {
+            title: 'Age Breakdown ',
+            pieHole: 0.4,
+            height: 400,
+        };
+        var optionsGenderInDraw = {
+            title: 'Gender Breakdown ',
+            pieHole: 0.4,
+            height: 400,
+        };
+
+        // set Gender or Age Chart rendering options before chart draw
+
+        if (selValue == 'ageChart') {
+            data = dataAgeInDraw;
+            options = optionsAgeInDraw;
+        }
+        else if (selValue == 'genderChart') {
+            data = dataGenderInDraw;
+            options = optionsGenderInDraw;
+        }
+
+        var chart = new google.visualization.PieChart(document.getElementById('ageOrGenderChart-div'));
+
+        chart.draw(data, options);
+
+    };
+
+}
+
+
+
+function drawHospitalOrTransmission(value, pieChartHospitalData, pieChartTransmissionData) {
+
+    console.log("This is the pieChartHospitalData data inside drawHospitalOrTransmission(): ", pieChartHospitalData);
+    console.log("This is the pieChartTransmissionData data inside drawHospitalOrTransmission(): ", pieChartTransmissionData);
+    var selValue = value;
+    console.log(selValue);
+
+
+    google.charts.setOnLoadCallback(drawChart);
+
+    function drawChart(data, options) {
+        var dataHospitalInDraw = google.visualization.arrayToDataTable(pieChartHospitalData, true);
+        var dataTransmissionInDraw = google.visualization.arrayToDataTable(pieChartTransmissionData, true);
+        var optionsHospitalInDraw = {
+            title: 'Hospital Breakdown ',
+            pieHole: 0.4,
+            height: 400,
+        };
+        var optionsTransmissionInDraw = {
+            title: 'Transmission Breakdown ',
+            pieHole: 0.4,
+            height: 400,
+        };
+
+        // set Gender or Age Chart rendering options before chart draw
+
+        if (selValue == 'hospitalChart') {
+            data = dataHospitalInDraw;
+            options = optionsHospitalInDraw;
+        }
+        else if (selValue == 'transmissionChart') {
+            data = dataTransmissionInDraw;
+            options = optionsTransmissionInDraw;
+        }
+
+        var chart = new google.visualization.PieChart(document.getElementById('hospitalOrTransmissionChart-div'));
+
+        chart.draw(data, options);
+
+    };
+
+}
 

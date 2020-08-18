@@ -22,7 +22,12 @@ function parsePieChartCountryData(fromParseIrelandData) {
             "Aged65up": retrieveObjKeyValuePair.attributes.Aged65up,
             "Male": retrieveObjKeyValuePair.attributes.Male,
             "Female": retrieveObjKeyValuePair.attributes.Female,
-            "Unknown": retrieveObjKeyValuePair.attributes.Unknown
+            "Unknown": retrieveObjKeyValuePair.attributes.Unknown,            
+            "HospitalisedCovidCases": retrieveObjKeyValuePair.attributes.HospitalisedCovidCases,
+            "RequiringICUCovidCases": retrieveObjKeyValuePair.attributes.RequiringICUCovidCases,
+            "CommunityTransmission": retrieveObjKeyValuePair.attributes.CommunityTransmission,
+            "CloseContact": retrieveObjKeyValuePair.attributes.CloseContact,
+            "TravelAbroad": retrieveObjKeyValuePair.attributes.TravelAbroad
         }
     });   
 
@@ -32,13 +37,16 @@ function parsePieChartCountryData(fromParseIrelandData) {
     // Extract pieChartCountryDataObject properties to 2D array
 
     pieChartCountryDataObject.forEach(function (item) {
-        tableRows.push([item.Aged1to4,item.Aged5to14, item.Aged15to24,item.Aged25to34,item.Aged35to44, item.Aged45to54,item.Aged55to64, item.Aged65up, item.Male, item.Female, item.Unknown])
+        tableRows.push([item.Aged1to4,item.Aged5to14, item.Aged15to24,item.Aged25to34,item.Aged35to44, 
+            item.Aged45to54,item.Aged55to64, item.Aged65up, item.Male, item.Female, item.Unknown, 
+            item.HospitalisedCovidCases, item.RequiringICUCovidCases, item.CommunityTransmission, 
+            item.CloseContact, item.TravelAbroad, ])
     });
 
     var lastTableRow = [] 
     lastTableRow.push(tableRows[tableRows.length - 1]);                 //Insert last Row of tableRows into lastTableRow array
 
-    console.log*("this is lastTableRow:", lastTableRow)
+    console.log("this is lastTableRow:", lastTableRow)
 
     tableHeaders = parseTableHeaders(pieChartCountryDataObject[0]);     // Pass 1st Index of pieChartCountryDataObject to parseTableHeaders Function
 
