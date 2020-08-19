@@ -108,3 +108,13 @@ The End user should also be able to select a specific date range and the website
 *  I also removed the legend and updated the chart height, titles and axis descriptions to make the rendered graph more aesthetically pleasing.
 *  Having rendered the dynamic Bar Charts with the heat Map I moved onto parsing the pie chart data. Unfortunately, the data set available countrywide was not duplicated for each county.
 *  The Pie Chart Data also requires the columns to be transposed to the rows and vice versa.
+
+## Credits
+
+The loader gifs used for this educational project are licensed for non-commercial use.
+The links the licenses and descriptions are attached below for reference:
+
+File:Android style loader.gif: https://commons.wikimedia.org/wiki/File:Android_style_loader.gif
+File:Loadingsome.gif: https://commons.wikimedia.org/wiki/File:Loadingsome.gif
+File:InternetSlowdown Day.gif: https://en.wikipedia.org/wiki/File:InternetSlowdown_Day.gif
+
