@@ -1,31 +1,33 @@
 $(document).ready(fetchGeoHiveDataSet); // On document ready initiate fetchGeoHiveDataSet function
 
-// API CountryWide Query URL Filtered for Daily Cases, Deaths, Hospitaluised Cases, Gender & Age Range
+// GeoHive API CountryWide Query URL Filtered for Daily Cases, Deaths, Hospitalised Cases, Gender, Age Range & Transmission Type
 // Response to be used for Google HeatMAP, headline info, graphs and pie charts
-const countryWideURL = "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=Date,ConfirmedCovidCases,TotalConfirmedCovidCases,ConfirmedCovidDeaths,TotalCovidDeaths,CovidCasesConfirmed,HospitalisedCovidCases,RequiringICUCovidCases,Male,Female,Unknown,Aged1,Aged1to4,Aged5to14,Aged15to24,Aged25to34,Aged35to44,Aged45to54,Aged55to64,Aged65up,CommunityTransmission,CloseContact,TravelAbroad,FID&outSR=4326&f=json";
+const countryWideURLFiltered = "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=Date,ConfirmedCovidCases,TotalConfirmedCovidCases,ConfirmedCovidDeaths,TotalCovidDeaths,CovidCasesConfirmed,HospitalisedCovidCases,RequiringICUCovidCases,Male,Female,Unknown,Aged1,Aged1to4,Aged5to14,Aged15to24,Aged25to34,Aged35to44,Aged45to54,Aged55to64,Aged65up,CommunityTransmission,CloseContact,TravelAbroad,FID&outSR=4326&f=json";
 
-/*
-All
-"https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json";
 
-/*
-    "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=Date,ConfirmedCovidCases,TotalConfirmedCovidCases,ConfirmedCovidDeaths,TotalCovidDeaths,CovidCasesConfirmed,HospitalisedCovidCases,RequiringICUCovidCases,Male,Female,Unknown,Aged1,Aged1to4,Aged5to14,Aged15to24,Aged25to34,Aged35to44,Aged45to54,Aged55to64,Aged65up,Median_Age,FID&outSR=4326&f=json";
-
-*/
+//  GeoHive API CountryWide Query URL unfiltered - All Fields (No filters)
+const countryWideURLNoFilter = "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json";
 
 
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 // Fetch Country Data and pass response as argument into processing functions.
 function fetchGeoHiveDataSet() {
 
+    // Loader Gif
+    $("#headline-data").html(
+        `<div id="loader">
+                 <img src="assets/images/InternetSlowdownLoader.gif" alt="loading..." />
+                 </div>`);     
+
     console.log("fetchGeoHiveDataSet function initiated");
 
-    $.when($.getJSON(countryWideURL)).then(                         //Retrive JSOn Parsed Data from countryWideURL
-        function (response) {
+    $.when($.getJSON(countryWideURLFiltered)).then(                         //Retrive JSOn Parsed Data from countryWideURL
+            function (response) {
             var irelandDataObject = response;                             // set irelandData to store API response
             //console.log(irelandDataObject);
             console.dir(irelandDataObject);
-            $("#ireland-data").html(parseIrelandData(irelandDataObject)); // placeholder for calling parseIrelandData function passing ing irelandData response
+
+            $("#ireland-data").html(parseIrelandData(irelandDataObject)); // placeholder for calling parseIrelandData function passing ing irelandData response  
         },
         function (errorResponse) {                                  // 2nd argument of $.when()$.then() promise for Error Responses
             if (errorResponse.status === 404) {

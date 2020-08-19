@@ -21,11 +21,11 @@
 	color: #dee2e6;
 }
 
-a:hover {
+.navbar-nav > li > a:hover {
           color: #7f7f88;
     }
 
- a {
+.navbar-nav > li > a {
           color: white;
     }
 
@@ -208,6 +208,7 @@ footer {
 .footer-div a {
     font-size: 29px;
     text-decoration: none;
+    color: white;
 }
 
 .footer-icon {
@@ -221,21 +222,49 @@ footer {
 
     color: black;							
     background: white;						
-    transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -webkit-transition: all 0.5s ease-in-out;
-    -ms-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
 }
 
-.footer-icon:hover {
+.footer-icon:hover, .footer-div >a >i:hover + span {
 	/* icon responsive hover */
-	background-color: black; /* Hex Colour #83838e47 changed to RGBa value for IE rendering */
+	background-color: black; 
+	color:#4a4a4f;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+
+.footer-div >a:hover, .footer-div >a:hover  .footer-icon  {
+	/* icon responsive hover */
+	background-color: black; 
+	color:#4a4a4f;
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+}
+
+/*.footer-div a:hover span {
+
 	color:#4a4a4f;;
 }
 
+
+/*
 .footer-div a:hover {
     color:#4a4a4f;;
 
 }
 
+.footer-div > a:hover   {
+
+	color:#4a4a4f;
+    
+}*/
