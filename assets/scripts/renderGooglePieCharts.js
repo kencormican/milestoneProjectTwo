@@ -112,12 +112,22 @@ function drawChartAgeOrGender(value, pieChartAgeData, pieChartGenderData) {
         var optionsAgeInDraw = {
             title: 'Age Breakdown ',
             pieHole: 0.4,
-            height: 400,
+            chartArea: {width: '100%',
+            height: '80%',
+            top: '10px'},
+            legend: {position: 'left',
+            alignment: 'center',
+            maxLines: 6}
         };
         var optionsGenderInDraw = {
             title: 'Gender Breakdown ',
             pieHole: 0.4,
-            height: 400,
+            chartArea: {width: '100%',
+            height: '80%',
+            top: '10px'},
+            legend: {position: 'left',
+            alignment: 'center',
+            maxLines: 6}
         };
 
         // set Gender or Age Chart rendering options before chart draw
@@ -157,12 +167,23 @@ function drawHospitalOrTransmission(value, pieChartHospitalData, pieChartTransmi
         var optionsHospitalInDraw = {
             title: 'Hospital Breakdown ',
             pieHole: 0.4,
-            height: 400,
+            chartArea: {width: '100%',
+            height: '80%',
+            top: '10px'},
+            legend: {position: 'left',
+            alignment: 'center',
+            maxLines: 6}
         };
         var optionsTransmissionInDraw = {
             title: 'Transmission Breakdown ',
             pieHole: 0.4,
-            height: 400,
+            chartArea: {width: '100%',
+            height: '80%',
+            top: '10px'},
+            legend: {position: 'left',
+            alignment: 'center',
+            maxLines: 6}
+
         };
 
         // set Gender or Age Chart rendering options before chart draw

@@ -1,0 +1,174 @@
+/* Header Styles */
+
+.repsonsiveHeader {
+  font-size: 1.4em;
+  padding:0;
+  margin:20px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+
+
+
+ 
+html {
+  font-size: 2.5vw;
+}
+
+
+
+
+/*h5 {
+
+font-size: 1.5rem;
+
+}
+
+p, select 
+{
+  font-size: 1.3rem;
+}
+
+option 
+{
+  font-size: 1.1rem;
+}
+/*
+@media (min-width: 992px) {
+  html{
+    font-size: 1.4rem;
+  }
+  select, option 
+{
+  font-size: 0.8rem;
+}
+h5 {
+
+font-size: 0.9rem;
+
+}
+}
+*/
+
+/* Quickfix to absence of RFS via CDN in bootstrap 4
+   Provided by christian Oliff @ https://christianoliff.com/blog/bootstrap-with-rfs*/
+
+@media (max-width: 1200px) {
+  legend {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+  h1,
+  .h1 {
+    font-size: calc(1.375rem + 1.5vw);
+  }
+  h2,
+  .h2 {
+    font-size: calc(1.3rem + 0.8vw);
+  }
+  h3,
+  .h3 {
+    font-size: calc(1.3rem + 0.6vw);
+  }
+  h4,
+  .h4 {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+    h5,
+  .h5 {
+    font-size: calc(0.9rem );
+  }
+
+  p,
+  .display-1{
+
+      font-size: calc(0.7rem );
+
+  }
+  .display-1 {
+    font-size: calc(1.725rem + 5.7vw);
+  }
+  .display-2 {
+    font-size: calc(1.675rem + 5.1vw);
+  }
+  .display-3 {
+    font-size: calc(1.575rem + 3.9vw);
+  }
+  .display-4 {
+    font-size: calc(1.475rem + 2.7vw);
+  }
+  .close {
+    font-size: calc(1.275rem + 0.3vw);
+  }
+}
+
+ html {
+  font-size: 1rem;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+
+
+/*
+h1 { font-size: 1.2em; }
+
+@media (min-width: 576px)  {
+    html, 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6  {
+    font-size: 0.8vm;
+  }
+}*/
+
+/*@media (min-width: 768px)  {
+  h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6  {
+    font-size: 1.2em;
+  }
+}
+
+@media (min-width: 992px)  {
+  h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6  {
+    font-size: 1.4rem;
+  }
+}*/

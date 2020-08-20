@@ -1,33 +1,64 @@
-.navbar-nav {
-    width: 100%;
-    text-align: left;
-    
-  }
+/*Background Colours..........................*/
 
-  /*.navbar-toggler-icon {
-      vertical-align: bottom;
-  }*/
-
-.navbar button {
-
-    margin-bottom: 25px;
-    margin-top: 25px;
-
+.bg-colour-black {
+  background-color: #000;
 }
 
-  .navbar-dark :hover {
-	/*Change bootstrap nav hover defaults*/
-	border-color: #dee2e6;
-	color: #dee2e6;
+.bg-colour-charcoal {
+  background-color: #4a4a4f;
 }
 
-.navbar-nav > li > a:hover {
-          color: #7f7f88;
-    }
+.bg-colour-white {
+  background-color: #fff;
+}
 
-.navbar-nav > li > a {
-          color: white;
-    }
+.bg-colour-offwhite {
+  background-color: #fafafa;
+}
+
+/*Generic Typography Styles.................*/
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.centered {
+  /* center aligning  text */
+  text-align: center;
+}
+
+p {
+  padding-top: 10px;
+}
+
+/*Block Divider  Styles.................*
+
+/* section {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 20px 0;
+}
+ *
+<hr class="block-divider block-divider--orange">
+/* Block dividers */
+
+.block-divider {
+    width: 75px;
+    height: 5px;
+    border: 0;
+    background-color: #444;
+}
+
+.block-divider-orange {
+    background-color: #f05f40;
+}
+
+.block-divider-short {
+    width: 35px;
+}
+*/
+
+
+/*body Styles for fixed header..........................*/
 
 body {
   scroll-padding-top: 70px; /* height of fixed header */
@@ -38,233 +69,222 @@ html {
 }
 
 #headline-data {
-    margin-top: 70px;
+  margin-top: 100px;
 }
-
-/*Background Colours..........................*/
-
-.bg-colour-black {
-		background-color:#000;
-}
-
-.bg-colour-charcoal {
-		background-color:#4a4a4f;
-}
-
-	
-.bg-colour-white {
-		background-color:#fff;
-}
-
-.bg-colour-offwhite {
-		background-color:#fafafa;
-}
-
-
-/*Generic Typography Styles.................*/
-	
-.uppercase {
-    text-transform: uppercase;
-}
-
-.centered {					/* center aligning  text */
-    text-align: center;
-}
-
 
 /*Header Styles............................*/
 
 header {
-    color: white;
-    padding-bottom: 20px;
-    
+  color: white;
+  padding-bottom: 20px;
 }
 
-header h1{
-    padding: 25px;
+header h1 {
+  padding: 25px;
 }
+
+/*Navbar Styles..........................*/
+
 
 /*Headline Styles...........................*/
 
 #article-headline-data {
-    padding: 40px;
+  padding: 40px;
 }
 
 /*Map styles...............................*/
 
-#map {
 
-    max-width: 80%;
-}
+
 
 /*Bar Chart styles..........................*/
 
-.section-graphs {
-    margin-top:40px;
+#section-bar-charts {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
-.section-heading-graphs {
-
-    padding: 20px;
-}
-
-#ireland-total-cases-graphed, #ireland-total-deaths-graphed {
-
-    max-width: 80%
+.section-heading-bar-charts {
+  padding: 20px;
 }
 
 
-/*Table styles...............................*/
 
-.section-county-table {
+/*Table Section styles...............................*/
 
-margin-top:40px;
+#section-county-table {
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
+.section-heading-county-table {
+  margin-bottom: 20px;
 }
 
 .county-table-row {
-    position:relative;
-    height: 290px;
-    overflow: hidden;
-    padding:20px;
-
-
+  position: relative;
+  height: 290px;
+  overflow: hidden;
+  padding: 20px;
 }
 
-/* The tale slider style is used to apply a fade gradient at the bottom of the exposed table element */
+/* The table slider style is used to apply a fade gradient at the bottom of the exposed table element */
 
 .table-slider {
-    width:100%;
-    height:35px;
-    position:absolute;
-    background:url(/assets/images/bg-gradient.png) repeat-x;
-    left:0;
-    bottom:0;    
+  width: 100%;
+  height: 35px;
+  position: absolute;
+  background: url(/assets/images/bg-gradient.png) repeat-x;
+  left: 0;
+  bottom: 0;
 }
 
 /*Alter Bootstrap defaults..................*/
 
-.table-slider-button.btn-secondary  {
-
-    width: 100%;
-    color: #5a6268;
-    background-color:white;
-    border-color:#eee; 
-    
+.table-slider-button.btn-secondary {
+  width: 100%;
+  color: #5a6268;
+  background-color: white;
+  border-color: #eee;
 }
-
 
 .table-slider-button.btn-secondary:focus {
-    /*outline-color: lightsteelblue;
+  /*outline-color: lightsteelblue;
     outline-color:rgb(216,226,239) rgb(162,169,179)*/
-    outline-color: rgb(216,226,239);opacity:0.6;
-    color: lightsteelblue;
+  outline-color: rgb(216, 226, 239);
+  opacity: 0.6;
+  color: lightsteelblue;
 }
 
-.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
-
-   background-color: #eee;
-   border-color:white;
-} 
-
-.table-slider-button.btn-secondary.focus, .table-slider-button.btn-secondary:focus {
-    border: none;
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle {
+  background-color: #eee;
+  border-color: white;
 }
 
+.table-slider-button.btn-secondary.focus,
+.table-slider-button.btn-secondary:focus {
+  border: none;
+}
 
 /* Pie Chart Section Styles.........*/
 
-.section-heading-graphs {
-
-    margin-top:40px;
+.section-heading-pie-charts {
+  margin-top: 40px;
+  /*margin-bottom: 40px;*/
 }
 
 .select-headings {
-
-    margin-top:40px;
-
+  margin-top: 40px;
 }
+
+.pie-chart-image {
+    padding-top: 30px;
+}
+
 
 
 /* Pie Chart dropdown Menu Styles.........*/
 
-
 select {
-
-    min-width: 200px
+  min-width: 200px;
 }
+
+/* Media queries requied to render graph correctly at small window sizes*/
+
+.pie-chart-image {
+    height: 250px;
+  }
+
+@media (min-width: 768px) {
+  .pie-chart-image {
+    height: 350px;
+  }
+
+
+}@media (min-width: 992px) {
+  .pie-chart-image {
+    height: 450px;
+  }
+}
+
+
 
 /*Footer styles..........................*/
 footer {
-    color: white;
-    padding-top: 20px;
-    
+  color: white;
+  padding-top: 20px;
 }
 
 .footer-div {
-    margin-bottom:20px;
-    margin-top:20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
+
+
+.footer-div a {
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+}
+
+
+
+.footer-icon {
+  width: 30px;
+  height: 30px;
+  padding: 8px 0;
+  border-radius: 50%;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+
+  color: black;
+  background: white;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.footer-icon:hover,
+.footer-div > a > i:hover + span {
+  /* icon responsive hover */
+  background-color: black;
+  color: #4a4a4f;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+.footer-div > a:hover,
+.footer-div > a:hover .footer-icon {
+  /* icon responsive hover */
+  background-color: black;
+  color: #4a4a4f;
+  transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+
+
+@media (min-width: 576px) {
+
 .footer-div a {
     font-size: 29px;
-    text-decoration: none;
-    color: white;
 }
 
 .footer-icon {
     width: 50px;
     height: 50px;
-    padding: 12px 0;
-    border-radius: 50%; 						
+    padding: 12px 0; 		
     font-size: 29px; 							
-    line-height: 29px;						
-    text-align: center;
-
-    color: black;							
-    background: white;						
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
+    line-height: 29px;	
+  }
 }
-
-.footer-icon:hover, .footer-div >a >i:hover + span {
-	/* icon responsive hover */
-	background-color: black; 
-	color:#4a4a4f;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-}
-
-.footer-div >a:hover, .footer-div >a:hover  .footer-icon  {
-	/* icon responsive hover */
-	background-color: black; 
-	color:#4a4a4f;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-    -ms-transition: all 0.3s ease-in-out;
-	-o-transition: all 0.3s ease-in-out;
-}
-
-/*.footer-div a:hover span {
-
-	color:#4a4a4f;;
-}
-
-
-/*
-.footer-div a:hover {
-    color:#4a4a4f;;
-
-}
-
-.footer-div > a:hover   {
-
-	color:#4a4a4f;
-    
-}*/
