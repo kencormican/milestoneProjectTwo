@@ -13,11 +13,23 @@ const countryWideURLNoFilter = "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/ar
 // Fetch Country Data and pass response as argument into processing functions.
 function fetchGeoHiveDataSet() {
 
-    // Loader Gif
+    // Loader Gif for external resources
     $("#headline-data").html(
         `<div id="loader">
                  <img src="assets/images/InternetSlowdownLoader.gif" alt="loading..." />
-                 </div>`);     
+                 </div>`);   
+    $("#ireland-total-cases-graphed").html(
+        `<div id="loader">
+                 <img src="assets/images/InternetSlowdownLoader.gif" alt="loading..." />
+                 </div>`);  
+    $("#ageOrGenderChart-div").html(
+        `<div id="loader">
+                 <img src="assets/images/InternetSlowdownLoader.gif" alt="loading..." />
+                 </div>`);  
+    $("#hospitalOrTransmissionChart-div").html(
+        `<div id="loader">
+                 <img src="assets/images/InternetSlowdownLoader.gif" alt="loading..." />
+                 </div>`);       
 
     console.log("fetchGeoHiveDataSet function initiated");
 
