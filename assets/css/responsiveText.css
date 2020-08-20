@@ -1,4 +1,5 @@
 /* Header Styles */
+/* Linked to jQuery fn() */
 
 .repsonsiveHeader {
   font-size: 1.4em;
@@ -6,61 +7,10 @@
   margin:20px;
 }
 
-
-
-
-
-
-
-
-
-
 /*
-
-
-
- 
-html {
-  font-size: 2.5vw;
-}
-
-
-
-
-/*h5 {
-
-font-size: 1.5rem;
-
-}
-
-p, select 
-{
-  font-size: 1.3rem;
-}
-
-option 
-{
-  font-size: 1.1rem;
-}
-/*
-@media (min-width: 992px) {
-  html{
-    font-size: 1.4rem;
-  }
-  select, option 
-{
-  font-size: 0.8rem;
-}
-h5 {
-
-font-size: 0.9rem;
-
-}
-}
+   Quickfix to absence of RFS via CDN in bootstrap 4 provided by 
+   Christian Oliff @ https://christianoliff.com/blog/bootstrap-with-rfs
 */
-
-/* Quickfix to absence of RFS via CDN in bootstrap 4
-   Provided by christian Oliff @ https://christianoliff.com/blog/bootstrap-with-rfs*/
 
 @media (max-width: 1200px) {
   legend {
@@ -82,17 +32,7 @@ font-size: 0.9rem;
   .h4 {
     font-size: calc(1.275rem + 0.3vw);
   }
-    h5,
-  .h5 {
-    font-size: calc(0.9rem );
-  }
 
-  p,
-  .display-1{
-
-      font-size: calc(0.7rem );
-
-  }
   .display-1 {
     font-size: calc(1.725rem + 5.7vw);
   }
@@ -108,67 +48,19 @@ font-size: 0.9rem;
   .close {
     font-size: calc(1.275rem + 0.3vw);
   }
-}
 
- html {
-  font-size: 1rem;
-}
-
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem;
-  }
-}
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem;
-  }
-}
-
-
-
-
-
-/*
-h1 { font-size: 1.2em; }
-
-@media (min-width: 576px)  {
-    html, 
-    h1,
-    h2,
-    h3,
-    h4,
+  /* Minor alterations additions to  Christian's Media Query to improve UX at small screen sizes*/
     h5,
-    h6  {
-    font-size: 0.8vm;
+  .h5 {
+    font-size: calc(0.9rem );
   }
-}*/
 
-/*@media (min-width: 768px)  {
-  h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6  {
-    font-size: 1.2em;
+  p,
+  .display-1{
+      font-size: calc(0.7rem );
   }
+
+
+
+
 }
-
-@media (min-width: 992px)  {
-  h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6  {
-    font-size: 1.4rem;
-  }
-}*/
