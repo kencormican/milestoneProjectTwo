@@ -3,7 +3,16 @@
 
 --------
 
-# Ken Cormican - Milestone Project Two 
+# Ken Cormican
+
+## Interactive Front End Development - Milestone Project Two 
+
+### Demo
+A live demo can be found @ https://kencormican.github.io/milestoneProjectTwo/
+
+ 
+![mockup image](assets/images/responsiveMockupMilestoneTwo.jpg)
+
 
 This is my Second Milestone Project for the Code Institute's Diploma in Full Stack Development.
 
