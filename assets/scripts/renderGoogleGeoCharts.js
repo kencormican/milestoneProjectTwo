@@ -14,7 +14,7 @@ function parseCountyArrayForMap(fromCSVParse) {             // Create create thr
                                                             
     var parsedCountyArrayForMap = fromCSVParse;    
 
-    console.log("this is parsedCountyArrayForMap inside parsedCountyArrayForMap() function: ", parsedCountyArrayForMap);
+    // console.log("this is parsedCountyArrayForMap inside parsedCountyArrayForMap() function: ", parsedCountyArrayForMap);
 
     setMapData(parsedCountyArrayForMap);                    // This passes the parsed array into the Google Charts API Call.
     
@@ -38,7 +38,7 @@ function setMapData(fromMapArrayParse) {
         // Declare GeoChart Function for Country Map
         function drawRegionsMap() {
 
-            console.log("this is mapData inside drawRegionsMap() function: ", mapData);
+            // console.log("this is mapData inside drawRegionsMap() function: ", mapData);
 
             var data = google.visualization.arrayToDataTable(mapData, false);
             /* 
@@ -62,6 +62,6 @@ function setMapData(fromMapArrayParse) {
             chart.draw(data, options);
         }
 
-};
+}
 
 

@@ -10,7 +10,7 @@ $.when(
     },
     function (errorResponse) {
       // 2nd argument of $.when()$.then() promise for Error Responses
-      console.log(errorResponse);
+      // console.log(errorResponse);
       $("#map").html(`<h2>Error: ${errorResponse.responseJSON.message}</h2>`);
     }
   )
@@ -31,9 +31,9 @@ function processCSVData(fromCSVGet) {
         
     }
 
-    var typeFormatedCsvArrayData = csvArrayData
+    var typeFormatedCsvArrayData = csvArrayData;
 
-    console.log("this is typeFormatedCsvArrayData inside processCSVData() function: ", typeFormatedCsvArrayData);
+    // console.log("this is typeFormatedCsvArrayData inside processCSVData() function: ", typeFormatedCsvArrayData);
 
     // Call parseCountyArrayForMap() and pass in formatted Array Data 
 

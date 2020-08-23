@@ -4,7 +4,7 @@
   $(".table-slider-button").click(function () {
 
      if ($(".county-table-row").css("height") === "290px") {            // default Table height equal to 290px
-          $(".county-table-row").animate({ height: "+=400" }, 1000)     // Grow height by 400px to display entire table
+          $(".county-table-row").animate({ height: "+=400" }, 1000);    // Grow height by 400px to display entire table
           $(".table-slider").fadeTo(1000,0);                            // Slider overlay fadesOut bottom of visble table div 
      }
       if ($(".county-table-row").css("height") != "290px") {
@@ -22,7 +22,7 @@
 function setTableChartData(fromProcessCSVData) {
 
     var countyTableChartData = fromProcessCSVData;
-    console.log("This is the countyTableChartData data inside setTableChartData(): ", countyTableChartData);
+    // console.log("This is the countyTableChartData data inside setTableChartData(): ", countyTableChartData);
 
 
     google.charts.load("current", {

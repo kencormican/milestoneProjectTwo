@@ -2,19 +2,19 @@
 // Transpose function to alter array for Google Pie chart loader constraints
 
 function transpose(matrix) {
-  const rows = matrix.length
-  const cols = matrix[0].length
+  const rows = matrix.length;
+  const cols = matrix[0].length;
 
-  let grid = []
+  let grid = [];
   for (let col = 0; col < cols; col++) {
-    grid[col] = []
+    grid[col] = [];
   }
   for (let row = 0; row < rows; row++) {
     for (let col = 0; col < cols; col++) {
-      grid[col][row] = matrix[row][col]
+      grid[col][row] = matrix[row][col];
     }
   }
-  return grid
+  return grid;
 }
 
 
@@ -23,7 +23,7 @@ function transpose(matrix) {
 
 function parseIrlPieChartData(fromParseIrelandData) {
 
-    console.log("parseIrlPieChartData function initiated")
+    // console.log("parseIrlPieChartData function initiated");
 
     var irlAgePieChartData = fromParseIrelandData.map(function (item) {
         return (item.slice(0, 8));                                          // only retain upto item index 8 in subarray...(so indexes 0 to 7)
@@ -42,10 +42,10 @@ function parseIrlPieChartData(fromParseIrelandData) {
     });
 
 
-    console.log("This is the irlAgePieChartData Array inside the parseIrlPieChartData() function: ", irlAgePieChartData);
-    console.log("This is the irlGenderPieChartData Array inside the irlGenderPieChartData() function: ", irlGenderPieChartData);
-    console.log("This is the irlHospitalPieChartData Array inside the irlGenderPieChartData() function: ", irlHospitalPieChartData);
-    console.log("This is the irlTransmissionPieChartData Array inside the irlGenderPieChartData() function: ", irlTransmissionPieChartData);
+    // console.log("This is the irlAgePieChartData Array inside the parseIrlPieChartData() function: ", irlAgePieChartData);
+    // console.log("This is the irlGenderPieChartData Array inside the irlGenderPieChartData() function: ", irlGenderPieChartData);
+    // console.log("This is the irlHospitalPieChartData Array inside the irlGenderPieChartData() function: ", irlHospitalPieChartData);
+    // console.log("This is the irlTransmissionPieChartData Array inside the irlGenderPieChartData() function: ", irlTransmissionPieChartData);
 
     setCountryPieChartData(irlAgePieChartData, irlGenderPieChartData, irlHospitalPieChartData, irlTransmissionPieChartData);
 }
@@ -59,10 +59,10 @@ function setCountryPieChartData(fromAgePieChartCases, fromGenderPieChartCases,
     pieChartHospitalData = transpose(fromHospitalPieChartCases);                // Call Transpose function passing in fromHospitalPieChartCases
     pieChartTransmissionData = transpose(fromTransmissionPieChartCases);        // Call Transpose function passing in fromTransmissionPieChartCases
 
-    console.log("This is the pieChartAgeData data inside setCountryPieChartData(): ", pieChartAgeData);
-    console.log("This is the pieChartGenderData data inside setCountryPieChartData(): ", pieChartGenderData);
-    console.log("This is the pieChartHospitalData data inside setCountryPieChartData(): ", pieChartHospitalData);
-    console.log("This is the pieChartTransmissionData data inside setCountryPieChartData(): ", pieChartTransmissionData);
+    // console.log("This is the pieChartAgeData data inside setCountryPieChartData(): ", pieChartAgeData);
+    // console.log("This is the pieChartGenderData data inside setCountryPieChartData(): ", pieChartGenderData);
+    // console.log("This is the pieChartHospitalData data inside setCountryPieChartData(): ", pieChartHospitalData);
+    // console.log("This is the pieChartTransmissionData data inside setCountryPieChartData(): ", pieChartTransmissionData);
 
     // Render default Age/Gender Graph with Age Data
     drawChartAgeOrGender("ageChart", pieChartAgeData, pieChartGenderData);
@@ -78,14 +78,14 @@ function setCountryPieChartData(fromAgePieChartCases, fromGenderPieChartCases,
 
     // Define getAgeGenderSelection() function
     function getAgeGenderSelection() {
-        console.log("getAgeGenderSelection function initiated")
+        // console.log("getAgeGenderSelection function initiated")
         var value = this.options[this.selectedIndex].value; //note was .value
         drawChartAgeOrGender(value, pieChartAgeData, pieChartGenderData);
     }
 
     // Define getHospitalTransmissionSelection() function
     function getHospitalTransmissionSelection() {
-        console.log("getHospitalTransmissionSelection function initiated")
+        // console.log("getHospitalTransmissionSelection function initiated")
         var value = this.options[this.selectedIndex].value; //note was .value
         drawHospitalOrTransmission(value, pieChartHospitalData, pieChartTransmissionData);
     }
@@ -98,10 +98,10 @@ google.charts.load("current", {
 
 function drawChartAgeOrGender(value, pieChartAgeData, pieChartGenderData) {
 
-    console.log("This is the pieChartAgeData data inside drawChartAgeOrGender(): ", pieChartAgeData);
-    console.log("This is the pieChartGenderData data inside drawChartAgeOrGender(): ", pieChartGenderData);
+    // console.log("This is the pieChartAgeData data inside drawChartAgeOrGender(): ", pieChartAgeData);
+    // console.log("This is the pieChartGenderData data inside drawChartAgeOrGender(): ", pieChartGenderData);
     var selValue = value;
-    console.log(selValue);
+    // console.log(selValue);
 
 
     google.charts.setOnLoadCallback(drawChart);
@@ -145,7 +145,7 @@ function drawChartAgeOrGender(value, pieChartAgeData, pieChartGenderData) {
 
         chart.draw(data, options);
 
-    };
+    }
 
 }
 
@@ -153,10 +153,10 @@ function drawChartAgeOrGender(value, pieChartAgeData, pieChartGenderData) {
 
 function drawHospitalOrTransmission(value, pieChartHospitalData, pieChartTransmissionData) {
 
-    console.log("This is the pieChartHospitalData data inside drawHospitalOrTransmission(): ", pieChartHospitalData);
-    console.log("This is the pieChartTransmissionData data inside drawHospitalOrTransmission(): ", pieChartTransmissionData);
+    // console.log("This is the pieChartHospitalData data inside drawHospitalOrTransmission(): ", pieChartHospitalData);
+    // console.log("This is the pieChartTransmissionData data inside drawHospitalOrTransmission(): ", pieChartTransmissionData);
     var selValue = value;
-    console.log(selValue);
+    // console.log(selValue);
 
 
     google.charts.setOnLoadCallback(drawChart);
@@ -201,7 +201,7 @@ function drawHospitalOrTransmission(value, pieChartHospitalData, pieChartTransmi
 
         chart.draw(data, options);
 
-    };
+    }
 
 }
 

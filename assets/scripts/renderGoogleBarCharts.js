@@ -22,7 +22,7 @@ function fetchLocalDate (fromUnixDateFunc){
 
 function parseIrlBarChartData(fromParseIrelandData) {
 
-    console.log("parseIrlBarChartData function initiated")
+    // console.log("parseIrlBarChartData function initiated")
 
     var irlCasesBarChartData = fromParseIrelandData.map(function (item) {
         return (item.slice(0, 2));                                          // only retain upto item index 2 in subarray...(so indexes 0 & 1)
@@ -32,8 +32,8 @@ function parseIrlBarChartData(fromParseIrelandData) {
         return (item.slice(0, 1)).concat(item.slice(2, 3));                            // concatenates index 0 and 2 of each subarray)
     });
 
-    console.log("This is the irlCasesBarChartData Array inside the parseIrlBarChartData() function: ", irlCasesBarChartData);
-    console.log("This is the irlDeathsBarChartData Array inside the parseIrlBarChartData() function: ", irlDeathsBarChartData);
+    // console.log("This is the irlCasesBarChartData Array inside the parseIrlBarChartData() function: ", irlCasesBarChartData);
+    // console.log("This is the irlDeathsBarChartData Array inside the parseIrlBarChartData() function: ", irlDeathsBarChartData);
 
     setBarChartData(irlCasesBarChartData, irlDeathsBarChartData);
 }
@@ -73,11 +73,8 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
             height: 400,
             title: 'Country Wide Cases Over Time',
             legend: 'none',
-            //legend: { position: 'top', maxLines: 3 },
             hAxis: {
                 title: 'Covid Cases Timeline',
-                // ticks: [0,.3,.6,.9,1]
-                // format: 'h:mm a',
             },
             vAxis: {
                 title: 'Number of New Cases Per Day'                
@@ -105,14 +102,10 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
             legend: 'none',
             hAxis: {
                 title: 'Covid Deaths Timeline',
-                //gridlines: {count: 5},
-                //ticks: [29/2/2020,26/5/2020],
-                //format: 'MMMM dd yy',
             },
             
             vAxis: {
                 title: 'Number of New Deaths Per Day',
-                //ticks: [0,50,100]
             }
         };
 
