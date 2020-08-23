@@ -31,15 +31,8 @@ p {
   padding-top: 10px;
 }
 
-/*Block Divider  Styles.................*
+/*Block Divider  Styles.................*/
 
-/* section {
-    border-bottom: 1px solid #e6e6e6;
-    padding: 20px 0;
-}
- *
-<hr class="block-divider block-divider--orange">
-/* Block dividers */
 
 .block-divider {
     width: 75px;
@@ -55,7 +48,7 @@ p {
 .block-divider-short {
     width: 35px;
 }
-*/
+
 
 
 /*body Styles for fixed header..........................*/
