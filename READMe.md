@@ -240,7 +240,7 @@ User    | Ask                                                                   
     - Please go to known bugs for IE related issue.
 
 *   Responsive Testing was completed using [Am I Responsive?](http://ami.responsivedesign.is/#)
-    - The Web Page renders well at small, medium and, large 
+    - The Web Page renders well at small, medium and large window sizes.
 
 *   The ReadMe.md page was tested using the [Markdown Live Preview](https://markdownlivepreview.com/)
 
@@ -322,8 +322,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Code
 
--   Elements of the Responsive Typography were provided by Christian Oliff.
-    [View](https://christianoliff.com/blog/bootstrap-with-rfs)
+-   Elements of the Responsive Typography were provided by this [Christian Oliff post](https://christianoliff.com/blog/bootstrap-with-rfs)
     This is a Quickfix to facilitate responsive typography in the absence of RFS via CDN for bootstrap 4 
 
 -   The Transpose array code came from this [StackOverflow post](https://stackoverflow.com/questions/17428587/transposing-a-2d-array-in-javascript/40539844)
@@ -340,7 +339,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -   [MDN Web Docs](https://developer.mozilla.org/) : Provided attitional information re scope and appropriate use cases for Callbacks. 
 
--   [w3schools.com](https://www.w3schools.com/default.asp : For Javascript, HTML, CSS & Bootstrap Tutorials
+-   [w3schools.com](https://www.w3schools.com/default.asp) : For Javascript, HTML, CSS & Bootstrap Tutorials
 
 
 ### Content
@@ -356,7 +355,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 -   The loader gifs used for this educational project are licensed for non-commercial use.
     The links to the licenses and descriptions are attached below for reference:
     [File:Android style loader.gif](https://commons.wikimedia.org/wiki/File:Android_style_loader.gif)
+
     [File:Loadingsome.gif:](https://commons.wikimedia.org/wiki/File:Loadingsome.gif)
+    
     [File:InternetSlowdown Day.gif:](https://en.wikipedia.org/wiki/File:InternetSlowdown_Day.gif)
 
 
