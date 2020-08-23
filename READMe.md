@@ -2,7 +2,12 @@
 
 
 --------
-<h1 align="center">Ken Cormican | Interactive Front End Development | Milestone Project Two </h1>
+<h1 align="left">Ken Cormican | Milestone Project Two </h1>
+
+
+<h2 align="left">Interactive Front End Development</h2>
+
+--------
 
 ## Demo
 
@@ -12,16 +17,18 @@
 
 ## Purpose
 
-I've chosen to develop a Website that produces an Irish COVID 19 Statistics Dashboard, integrating functionality from the Google Maps & Charts APIs
-with dynamic open source COVID statistics acquired through a geoHive API call.
-My intent is to use the OpenSource Government Data Set to provide a hypothetical end user with accurate and localised COVID information.
+In late 2019 [COVID-19](https://en.wikipedia.org/wiki/Coronavirus_disease_2019) or Coronavirus Disease 2019, was identified as a new and unique respiratory 
+illness. It ability to spread rapidly, unhindered throughout a population was first realised in Wuhan, a city within the central province of Hubei in China.
+Since then the disease has developed into a global pandemic, affecting every country and individual on planet either directly through infection or indirectly 
+via the social and economic consequences.
+
+I've chosen to develop a Website that produces an Irish COVID 19 Statistics Dashboard, integrating functionality from the Google Maps & Charts APIs with dynamic 
+open source COVID statistics acquired through the GeoHive API Catalogue.  My intent is to use the OpenSource Government Data Set to provide a hypothetical end 
+user with accurate and localised COVID information.
 
 --------
 
 <h2 align="center"><img src="assets/images/responsiveMockupMilestoneTwo.jpg"></h2> 
-
-This is my Second Milestone Project for the Code Institute's Diploma in Full Stack Development.
-
 --------
 
 ## The Project Brief
@@ -38,66 +45,73 @@ The brief was to create an Interactive Web Front End that exposes the learnings 
 
 ## User Experience (UX)
 
-- ### Requirements
+### Requirements
 
-    Use the Google API too render a COVID 19 Heat Map of Ireland broken down by County Boundary.
-    The Map should be responsive allowing end user to request more detailed statistics by selecting the county on the MAP.
-    I addition to the heat map, A Government data set should be used to provide an accurate breakdown of infection and/or death rates :
-        * per County
-        * based on Gender
-        * per Age category
+Use the Google Chart API to render a COVID 19 Heat Map of Ireland broken down by County Boundary.
+The Map should be responsive allowing end user to view more detailed statistics by selecting the county on the MAP.
+In addition to the heat map, A Government data set should be used to provide an accurate breakdown of infection and/or death rates:
 
-    The End user should also be able to select a specific date range and the website should produce graphs or pie charts reflecing 
-    Age, Gender, Number of Hospitalisations and Transmission Type statistics.
+- per County
+- based on Gender
+- per Age category
 
+The End user should also be able to the COVID timeline and the website should produce graphs or pie charts reflecing 
+Age, Gender, Number of Hospitalisations and Transmission Type statistics.
 
-- ### User stories:
+--------
+
+### User stories:
 
 User    | Ask                                                                                                                   |
 :--     | :---------------------------------------------------------------------------------------------------------------------|
 1       | I would like to have localised figures showing the number of infected people and the number of deaths for each county.|
 1       | I would like to see how the disease is affecting different age groups.                                                |     
 2       | I want to know if children are vectors?                                                                               |
-2       | What is the ratio of infected Men vs Women?                                                                           |
+2       | What is the ratio of infected Male to Female cases?                                                                   |
 3       | What was the peak and when did it occur?                                                                              |
 3       | How does that compare to now?                                                                                         |
+4       | How Many people have been hospitalised as a result of the disease?                                                    |
+4       | How many of those required treatment in ICU?                                                                          |
 
 
-- ### Design
+### Design
 
-    -   #### Colour Scheme
-        -   I felt that a basic black and white webpage design was more aesthetically pleasing.
-        -   Colour is to be introduce through the Geographic Heatmap, Bar, Table and Pie charts.
-        -   Minor changes have been made to defaults introducing charcoal grey on hover for several toggle icon and footer anchor elements.
-        -   Changes have been made to the bootstrap defaults of rthe table button slider to align with the Google Table Chart colour scheme.
-    -   #### Typography
-        -   The Roboto font is the Bootstrap default and with Sans Serif acting as the fallback font.
-        -   A Font awesome icon has also been added to the footer anchor.
-        -   The Page Title is altered from a single line to two lines using jQuery to render more clearly at small window sizes.
-    -   #### Imagery
-        -   The Heat Map provides a central Hero image, with Blue Bar charts, Table and Doughnut styled Pie Charts providing secondary points of focus.
-    -   #### Responsive Design
-        -   The Headline data will be rendered at all window sizes.
-        -   The Heat Map and Headline data will be rendered at all window sizes but changes from a 12 unit column to 10 units at the medium breakpoint.
-        -   The Gender, Age, Hospitalisation & Transmission Type Pie Chart render at all window sizes moving from stacked to side by side at the medium breakpoint.
-        -   The bar charts  render to page beyond the medium breakpoint but change from a 12 unit column to a centered 10 unit column for large windows.
-        -   The Table only renders to page beyond the large breakpoint.
-        -   The Toggle Menu changes to reflect available elements across breakpoints.
-        -   The Pie Chart image wrapper had to be altered at different breakpoints to interwork with the Google API & render cleanly at different window sized. 
-    -   ##### Interactive Design
-        -   The Google Geo, Charts & Table libraries provide an inbuilt interactivity features including responsive data on hover.
-        -   In addition to the above an interactive table view slider and dropdown menues have also been added.
-        -   The Table slider button allows the end user to expose partially hidden table data on click.
-        -   The Select Dropdown menues allow the end user to select the type of information displayed by the Pie Charts.
-        -   The default Navbar toggle behaviour has also been altered to collapse when a nav link item has been selected.
+#### Colour Scheme
+-   I felt that a basic black and white webpage design was more aesthetically pleasing.
+-   Colour is to be introduced through the Geographic Heatmap, Bar, Table and Pie charts.
+-   Minor changes have been made to the bootstrap anchor defaults
+    - introducing charcoal grey on hover for several toggle icon and footer anchor elements.
+-   Changes have been made to the bootstrap buttun defaults for the table button slider.  
+    - They now align more closely with the Google Table Chart colour scheme.
+#### Typography
+-   The Roboto font is the Bootstrap default and  Sans Serif acts as the fallback font.
+-   A Font awesome icon has also been added to the footer anchor.
+-   The Page Title is altered from a single line to two lines using jQuery to render more clearly at small window sizes.
+#### Imagery
+-   The Heat Map provides a central Hero image, with (Blue Column) Bar charts, Table and Doughnut styled Pie Charts providing secondary points of focus.
+#### Responsive Elements
+-   The Headline data will be rendered at all window sizes.
+-   The Heat Map and Headline data will be rendered at all window sizes but changes from a 12 unit column to 10 units at the medium breakpoint.
+-   The Gender, Age, Hospitalisation & Transmission Type Pie Chart render at all window sizes moving from stacked to side by side at the medium breakpoint.
+-   The bar charts  render to page beyond the medium breakpoint but change from a 12 unit column to a centered 10 unit column for large windows.
+-   The Table only renders to page beyond the large breakpoint.
+-   The Toggle Menu changes to reflect available elements across breakpoints.
+-   The Pie Chart image wrapper had to be altered at different breakpoints to interwork with the Google API & render cleanly at different window sized. 
+##### Interactive Elements
+-   The Google Geo, Charts & Table libraries provide inbuilt interactivity features including responsive data on hover.
+-   In addition to the above an interactive table view slider and dropdown menus have also been added.
+-   The Table slider button allows the end user to expose partially hidden table data on click.
+-   The Select Dropdown menues allow the end user to select the type of information displayed by the Pie Charts.
+-   The default Navbar toggle behaviour has also been altered to collapse when a nav link item has been selected.
 
 
--  ### Wireframes
+### Wireframes
 
-    -   Basic Wireframe Mockup Small, Medium & Large Window Sizes - [View](assets/wireFrames&Mockups/wireframes.jpg)
+-   Basic Wireframe Mockups: Small, Medium & Large Window Sizes - [View](assets/wireFrames&Mockups/wireframes.jpg)
 
-    -   Detailed Balsamiq Mockup Small, Medium & Large Window Sizes - [View](assets/wireFrames&Mockups/detailedBalsamiqMockup.jpg)
+-   Detailed Balsamiq Mockup: Small, Medium & Large Window Sizes - [View](assets/wireFrames&Mockups/detailedBalsamiqMockup.jpg)
 
+--------
 
 ## Features
 
@@ -129,7 +143,8 @@ User    | Ask                                                                   
 1. [Font Awesome:](https://fontawesome.com/)
     - Font Awesome was used for the footer nav icon for aesthetic and UX purposes.
 1. [jQuery 3.5.1:](https://jquery.com/)
-    - jQuery was used to enhance the default Bootstrap navbar behaviour, to alter the tile at different breakpoints and to make the table & Pie Chart displays more interactive.
+    - The project uses JQuery to simplify DOM manipulation. 
+    - In particular jQuery was used to enhance the default Bootstrap navbar behaviour, to alter the title at different breakpoints and to make the table & Pie Chart displays more interactive.
 1. [jQuery.csv:](https://github.com/typeiii/jquery-csv)
     - jQuery.csv was used to process the CSV data into arrays before rendering the Heat Map and table to the web page.
 1. [Git](https://git-scm.com/)
@@ -147,9 +162,10 @@ User    | Ask                                                                   
 
 
 --------
-## Development Process 
 
-*   The Initial plan was to produce a (multidimensional) Ireland based COVID statistics web page. Following exploration of the user stories and similar International websites I landed on the 
+## Development Process & Testing
+
+*   The Initial plan was to produce a (multidimensional) Ireland COVID statistics web page. Following exploration of the user stories and similar International websites I landed on the 
     concept of producing an Irish heat map providing Covid statistics based on county boundary. I also noted that all websites currently providing Ireland statistics did not  provide death 
     rates on a county by county basis.The High level plan was to provide accompanying tabular, bar/line chart and pie chart data to support the statistics and to provide a further breakdown 
     of cases based on date, age and  gender.
@@ -162,7 +178,7 @@ User    | Ask                                                                   
     calls to two separate Data Sets. The first would provide the country wide base data set and the second would provide the county specific breakdown. Initially I used an XHR request per the "Consuming 
     APIs Using JavaScript" tutorial and went about converting the nested JSON objects to a 2D Array using the approach described within the Tabular Data Modules. The approach worked well, and I was able 
     to use console.logs() at various points within the parsing process to determine I had produced a viable 2D array. I also completed the parse Headline data function which captured the most recent 
-    iteration of the Total Confirmed Cases and Total Confirmed Deaths from the Countrywide Array.At this point in time I moved from the XHR fetch process to a jQuery.Get via a $.when/.then promises, as 
+    iteration of the Total Confirmed Cases and Total Confirmed Deaths from the Countrywide Array. At this point in time I moved from the XHR fetch process to a jQuery.Get via a $.when/.then promises, as 
     described in the GitHub API module.  I felt it was cleaner and better suited to working with multiple responses from simultaneous API calls for the Countrywide and county specific datasets. 
 *   Unfortunately, having successfully made calls to both datasets and passed the resultant responses into their own respective arrays I noted that the county death statistics contained null values for 
     each cell.  I believe this is why the majority of the other Ireland COVID trackers omit this information.I then set about looking for another source with a comparable dataset that provided the necessary 
@@ -170,7 +186,7 @@ User    | Ask                                                                   
     I felt that while this data would be static it provided the necessary proof of concept to proceed. I began by converting the Spreadsheet to the appropriate CSV format.  I then used an Ajax() requested 
     to fetch the CSV data and nested for loop to iterate through the rows and columns and produce the necessary 2D array output.  
 *   However, I encountered problems with both functional scope and type constraints errors when passing the array data to the Google API function. I also noted through use of console.log that the render 
-    function was iterating twice.To verify the array type was a standard array as opposed to JSON array I used the jQuery $.isArray & $.makeArray methods at the point they were received into google function.
+    function was iterating twice. To verify the array type was a standard array as opposed to JSON array I used the jQuery $.isArray & $.makeArray methods at the point they were received into google function.
     Having confirmed they were good I then created a static array inside the package loader but outside the map render function. I then used the arrayToDataTable() method and successfully passed that into the 
     render function as an argument. Having confirmed the arrayToDataTable() method worked as anticipated I attempted to introduce a Jasmine based approach to testing.  I thought it might aid in identifying 
     the root cause of the problem. Unfortunately I encountered difficulty dealing with the testing of outputs from nested functions. I spoke at length with the Tutor team , re resolving the issues, and the 
@@ -189,18 +205,99 @@ User    | Ask                                                                   
     pleasing. Having rendered the dynamic Bar Charts with the heat Map I moved onto parsing the pie chart data. Unfortunately, the data set available countrywide was not duplicated for each county. The Pie Chart 
     Data also requires the columns to be transposed to the rows and vice versa.
 
+--------
+
+## Deployment
+
+### GitHub Pages
+
+The project was deployed to GitHub Pages using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/kencormican/milestoneProjectTwo) from the list of available repos.
+2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
+3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
+4. Under "Source", click the dropdown called "None" and select "Master Branch".
+5. The page will automatically refresh.
+6. Scroll back down through the page to locate the now published site [link](https://kencormican.github.io/milestoneProjectTwo/) in the "GitHub Pages" section.
+    - Note* to function correctly the main html page must be named "index.html"
+
+### Forking the GitHub Repository
+
+By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/kencormican/milestoneProjectTwo)
+2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+3. You should now have a copy of the original repository in your GitHub account.
+
+### Making a Local Clone
+
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/kencormican/milestoneProjectTwo)
+2. Under the repository name, click "Clone or download".
+3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone`, and then paste the URL you copied in Step 3.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
+
+7. Press Enter. Your local clone will be created.
+
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
 ## Credits
 
-The loader gifs used for this educational project are licensed for non-commercial use.
-The links to the licenses and descriptions are attached below for reference:
+### Code
+
+-   Elements of the Responsive Typography were provided by Christian Oliff.
+    [View](https://christianoliff.com/blog/bootstrap-with-rfs)
+    This is a Quickfix to facilitate responsive typography in the absence of RFS via CDN for bootstrap 4 
+
+-   The Transpose array code came from this [StackOverflow post](https://stackoverflow.com/questions/17428587/transposing-a-2d-array-in-javascript/40539844)
+
+-   The code for parsing JSON objects into 2D Arrays was derived from this [StackOverflow post](https://stackoverflow.com/questions/30825129/how-to-convert-json-array-into-javascript-2d-array)
+
+-   The Unix TimeStamp to date code was derived from this [MDM Web Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+
+-   The code for the navbar toggler was derived from this [Bootstrap4 CheatSheet](https://hackerthemes.com/bootstrap-cheatsheet/)
+
+-   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
+
+-   [MDN Web Docs](https://developer.mozilla.org/) : Provided attitional information re scope and appropriate use cases for Callbacks. 
+
+-   [w3schools.com](https://www.w3schools.com/default.asp : For Javascript, HTML, CSS & Bootstrap Tutorials
 
 
-[File:Android style loader.gif](https://commons.wikimedia.org/wiki/File:Android_style_loader.gif)
-[File:Loadingsome.gif:](https://commons.wikimedia.org/wiki/File:Loadingsome.gif)
-[File:InternetSlowdown Day.gif:](https://en.wikipedia.org/wiki/File:InternetSlowdown_Day.gif)
+### Content
 
-Elements of the Responsive Typography were provided by Christian Oliff.
-[View](https://christianoliff.com/blog/bootstrap-with-rfs)
-This is a Quickfix to facilitate responsive typography in the absence of RFS via CDN for bootstrap 4 
-   
+-   All content was written by the developer.
+
+-   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
+
+### Media
+
+-   All Images were created by the developer.
+
+-   The loader gifs used for this educational project are licensed for non-commercial use.
+    The links to the licenses and descriptions are attached below for reference:
+    [File:Android style loader.gif](https://commons.wikimedia.org/wiki/File:Android_style_loader.gif)
+    [File:Loadingsome.gif:](https://commons.wikimedia.org/wiki/File:Loadingsome.gif)
+    [File:InternetSlowdown Day.gif:](https://en.wikipedia.org/wiki/File:InternetSlowdown_Day.gif)
+
+
+### Acknowledgements
+
+-   My Mentor for continuous helpful feedback.
+
+-   Tutor support at Code Institute for their support.   
 
