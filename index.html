@@ -135,13 +135,13 @@
                 </div>
                 <div class="select-dropdown-menu col-12 d-flex justify-content-center">
                     <!-- d-flex required to center dropdowns-->
-                    <th class="">
+                    
                         <select id="ageOrGenderSelect" class="">
                             <option selected disabled>Choose</option>
                             <option value="ageChart">Age</option>
                             <option value="genderChart">Gender</option>
                         </select>
-                    </th>
+                   
                 </div>
                 <div id="ageOrGenderChart-div" class="pie-chart-image col-12 col-md-10 mx-auto"></div>
             </div>
@@ -151,13 +151,13 @@
                 </div>
                 <div class="select-dropdown-menu col-12 d-flex justify-content-center">
                     <!-- d-flex required to center dropdowns-->
-                    <th class="">
+
                         <select id="hospitalOrTransmissionSelect" class="">
                             <option selected disabled>Choose</option>
                             <option value="hospitalChart">Hospitalised Covid Cases</option> 
                             <option value="transmissionChart">Transmission Rates</option> 
                         </select>
-                    </th>
+
                 </div>
         
                 <div id="hospitalOrTransmissionChart-div" class="pie-chart-image col-12 col-md-10 mx-auto"></div>
@@ -182,13 +182,17 @@
 
 
  
-    <!----------------------------------------Load JS libraries------------------------------------------------->
+    
+    
+    <!--
+    Load JS libraries
+    -->
     
     <!-- Load jQuery Library -->
 	<script src="https://code.jquery.com/jquery-3.5.1.js" 
     integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="	crossorigin="anonymous"></script>
 
-    <!----------------------------------------Load Boostrap JS dependencies------------------------------------------------->
+    <!--                                      Load Boostrap JS dependencies                                    -->
     
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
@@ -197,64 +201,86 @@
     <script src="jQueryCSV/jquery.csv.js"></script>
 
     <!-- Load Google Charts Libraries -->    
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
     <!--IntroJS Library-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/2.9.3/intro.min.js" integrity="sha512-VTd65gL0pCLNPv5Bsf5LNfKbL8/odPq0bLQ4u226UNmT7SzE4xk+5ckLNMuksNTux/pDLMtxYuf0Copz8zMsSA==" crossorigin="anonymous"></script>
   
 
-    <!--------------------------------------Load Local JS Scripts------------------------------------------------>
+    
+    
+    
+    <!--
+    Load Local JS Scripts
+    -->
 
 
     <!-- Load Obfuscator data script-->
     
-	<script type="text/javascript" src="assets/scripts/obfuscatedKey.js"></script>
+	<script src="assets/scripts/obfuscatedKey.js"></script>
 
 
-    <!----------------------------------------Load Google API Scipts----------------------------------------------->
+    
+    
+    <!--
+    Load Google API Scipts
+    -->
 
     <!-- Load Google Geo Charts API script -->
 
-    <script type="text/javascript" src="assets/scripts/renderGoogleGeoCharts.js"></script>
+    <script src="assets/scripts/renderGoogleGeoCharts.js"></script>
 
     <!-- Load Google Bar Charts API script -->
 
-    <script type="text/javascript" src="assets/scripts/renderGoogleBarCharts.js"></script>
+    <script src="assets/scripts/renderGoogleBarCharts.js"></script>
 
     <!-- Load Google County Table Chart API script -->
 
-    <script type="text/javascript" src="assets/scripts/renderGoogleTableChart.js"></script>
+    <script src="assets/scripts/renderGoogleTableChart.js"></script>
 
     <!-- Load Google CountryWide Pie Charts API script -->
 
-    <script type="text/javascript" src="assets/scripts/renderGooglePieCharts.js"></script>
+    <script src="assets/scripts/renderGooglePieCharts.js"></script>
 
-    <!----------------------------------------Load Parse Scripts----------------------------------------------->      
+    
+    
+    <!--
+    Load Parse Scripts
+    -->      
 
     <!-- Load parse pie Chart Data script-->
   
-	<script type="text/javascript" src="assets/scripts/parsePieChartData.js"></script>
+	<script src="assets/scripts/parsePieChartData.js"></script>
 
 
-    <!----------------------------------------Load Fetch Scripts----------------------------------------------->    
+    
+    
+    <!--
+    Load Fetch Scripts
+    -->    
 
     <!-- Load fetch and parse County CSV data script-->
   
-	<script type="text/javascript" src="assets/scripts/countyCsvDatatoArrayParser.js"></script>
+	<script src="assets/scripts/countyCsvDatatoArrayParser.js"></script>
 
     <!-- Load fetch and parse CountryWide data script-->  
 
-    <script type="text/javascript" src="assets/scripts/getCountryWideData.js"></script>
+    <script src="assets/scripts/getCountryWideData.js"></script>
 
-    <!----------------------------------------Load Typography Script--------------------------------------->    
+    
+    
+    
+    <!--
+    Load Typography Scripts
+    -->    
 
     <!-- Load Responsive Text script-->
   
-	<script type="text/javascript" src="assets/scripts/responsiveHeaderText.js"></script>
+	<script src="assets/scripts/responsiveHeaderText.js"></script>
 
     <!-- Load IntroJS scripts-->
 
-	<script type="text/javascript" src="assets/scripts/introJSTooltips.js"></script>
+	<script src="assets/scripts/introJSTooltips.js"></script>
 
 </body>
 
