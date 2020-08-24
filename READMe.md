@@ -55,7 +55,7 @@ In addition to the heat map, A Government data set should be used to provide an 
 - based on Gender
 - per Age category
 
-The End user should also be able to the COVID timeline and the website should produce graphs or pie charts reflecing 
+The End user should also be able to view the COVID timeline and the website should produce graphs or pie charts reflecting 
 Age, Gender, Number of Hospitalisations and Transmission Type statistics.
 
 --------
@@ -81,10 +81,10 @@ User    | Ask                                                                   
 -   Colour is to be introduced through the Geographic Heatmap, Bar, Table and Pie charts.
 -   Minor changes have been made to the bootstrap anchor defaults
     - introducing charcoal grey on hover for several toggle icon and footer anchor elements.
--   Changes have been made to the bootstrap buttun defaults for the table button slider.  
+-   Changes have been made to the bootstrap button defaults for the table button slider.  
     - They now align more closely with the Google Table Chart colour scheme.
 #### Typography
--   The Roboto font is the Bootstrap default and  Sans Serif acts as the fallback font.
+-   The Roboto font is the Bootstrap default and Sans Serif acts as the fallback font.
 -   A Font awesome icon has also been added to the footer anchor.
 -   The Page Title is altered from a single line to two lines using jQuery to render more clearly at small window sizes.
 #### Imagery
@@ -93,15 +93,15 @@ User    | Ask                                                                   
 -   The Headline data will be rendered at all window sizes.
 -   The Heat Map and Headline data will be rendered at all window sizes but changes from a 12 unit column to 10 units at the medium breakpoint.
 -   The Gender, Age, Hospitalisation & Transmission Type Pie Chart render at all window sizes moving from stacked to side by side at the medium breakpoint.
--   The bar charts  render to page beyond the medium breakpoint but change from a 12 unit column to a centered 10 unit column for large windows.
--   The Table only renders to page beyond the large breakpoint.
+-   The bar charts render to the page beyond the medium breakpoint but change from a 12 unit column to a centered 10 unit column for large windows.
+-   The Table only renders to the page beyond the large breakpoint.
 -   The Toggle Menu changes to reflect available elements across breakpoints.
 -   The Pie Chart image wrapper had to be altered at different breakpoints to interwork with the Google API & render cleanly at different window sized. 
 #### Interactive Elements
 -   The Google Geo, Charts & Table libraries provide inbuilt interactivity features including responsive data on hover.
 -   In addition to the above an interactive table view slider and dropdown menus have also been added.
 -   The Table slider button allows the end user to expose partially hidden table data on click.
--   The Select Dropdown menues allow the end user to select the type of information displayed by the Pie Charts.
+-   The Select Dropdown menus allow the end user to select the type of information displayed by the Pie Charts.
 -   The default Navbar toggle behaviour has also been altered to collapse when a nav link item has been selected.
 
 
@@ -119,16 +119,16 @@ User    | Ask                                                                   
 
 -   Interactive elements:
     All maps and charts rendered using the Google API provide an inherent degree of interactivity.
-    Seperately, the default behaviour of the Navbar toggler, Map, Bar, Table and Pie Charts has been altered to provise a more user friendly experience.
+    Separately, the default behaviour of the Navbar toggler, Map, Bar, Table and Pie Charts has been altered to provide a more user friendly experience.
 
 -   The Headline Data provides Total Confirmed Cases and Total Confirmed Deaths
-    The Heat Map provides County specicfic data on hover
+    The Heat Map provides County specific data on hover
     The Bar Charts provide a Daily Timeline Confirmed Cases & Deaths since the pandemic began.
     The Table provide Total Confirmed Cases, Deaths and Median Age on a county by county basis.
     The Doughnut Charts allow the end user to select Nationwide statistics based on Age, Gender, No of Hospitalisations and transmission Type.
     
 -   A Tooltip type Helper menu can also be provided by selecting instructions from the Navigation menu.
-    Loader gifs have been added while the data is being process to improve the end user expereince.
+    Loader gifs have been added while the data is being process to improve the end user experience.
 
 
 --------
@@ -162,7 +162,7 @@ User    | Ask                                                                   
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the projects code after being pushed from Git.
 1. [Microsoft Excel:](https://en.wikipedia.org/wiki/Microsoft_Excel)
-    - Microsoft Execl was used to alter the CSO County spreadsheet into a workable format.
+    - Microsoft Excel was used to alter the CSO County spreadsheet into a workable format.
 1. [Microsoft Paint:](https://en.wikipedia.org/wiki/Microsoft_Paint)
     - Microsoft Paint was used to create the responsive image for the ReadMe.md and to capture the balsamiq & wireframe images in a generic format.
 1. [Balsamiq:](https://balsamiq.com/)
@@ -226,10 +226,10 @@ User    | Ask                                                                   
     pleasing. 
 *   Having rendered the dynamic Bar Charts and the heat Map I moved onto parsing the pie chart data. The Pie Chart Data also required the columns be transposed to the rows and vice versa. This code I acquired
     from the following [StackOverflow post](https://stackoverflow.com/questions/17428587/transposing-a-2d-array-in-javascript/40539844).  I was heavily constrained by how and where the Google API rendered the data
-    within the div wrapper so spent a signficant period of time working testing various options to arrive at the legent title and graph placement.
-    I also used jQuery to dynamically alter the wrapper heigth so that the graphs sizes and postions rendered cleanly at different breakpoints.
+    within the div wrapper so spent a significant period of time working testing various options to arrive at the legend title and graph placement.
+    I also used jQuery to dynamically alter the wrapper heigtht so that the graphs sizes and positions rendered cleanly at different breakpoints.
 *   I used the [Google Charts Table library](https://developers.google.com/chart/interactive/docs/gallery/table) to render the County specific cases, deaths and median age data to the table.
-    The plan was to partially hide the lower elements of the table and to expose them on button click. I went thorugh multiple iterations of testing  but ultimately settled on a combination of the jQuery.css(), 
+    The plan was to partially hide the lower elements of the table and to expose them on button click. I went through multiple iterations of testing  but ultimately settled on a combination of the jQuery.css(), 
     animate() and fadeTo() methods to achieve the desired result. This approach was derived from the following [StackOverflow post](https://stackoverflow.com/questions/16819721/jquery-animate-and-latest-version).
 
 --------
@@ -329,15 +329,15 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -   The code for parsing JSON objects into 2D Arrays was derived from this [StackOverflow post](https://stackoverflow.com/questions/30825129/how-to-convert-json-array-into-javascript-2d-array)
 
--   The Unix TimeStamp to date code was derived from this [MDM Web Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+-   The Unix TimeStamp to date code was derived from this [MDN Web Doc](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
 
 -   The code for the navbar toggler was derived from this [Bootstrap4 CheatSheet](https://hackerthemes.com/bootstrap-cheatsheet/)
 
--   The code for expanding the Table on buttom click was derived from this [StackOverflow post](https://stackoverflow.com/questions/16819721/jquery-animate-and-latest-version)
+-   The code for expanding the Table on button click was derived from this [StackOverflow post](https://stackoverflow.com/questions/16819721/jquery-animate-and-latest-version)
 
 -   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
 
--   [MDN Web Docs](https://developer.mozilla.org/) : Provided attitional information re scope and appropriate use cases for Callbacks. 
+-   [MDN Web Docs](https://developer.mozilla.org/) : Provided additional information re scope and appropriate use cases for Callbacks. 
 
 -   [w3schools.com](https://www.w3schools.com/default.asp) : For Javascript, HTML, CSS & Bootstrap Tutorials
 
@@ -346,18 +346,15 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -   All content was written by the developer.
 
--   Psychological properties of colours text in the README.md was found [here](http://www.colour-affects.co.uk/psychological-properties-of-colours)
-
 ### Media
 
--   All Images were created by the developer.
-
 -   The loader gifs used for this educational project are licensed for non-commercial use.
-    The links to the licenses and descriptions are attached below for reference:
+    The links to the licenses and descriptions are attached below for reference:     
+
     [File:Android style loader.gif](https://commons.wikimedia.org/wiki/File:Android_style_loader.gif)
 
     [File:Loadingsome.gif:](https://commons.wikimedia.org/wiki/File:Loadingsome.gif)
-    
+
     [File:InternetSlowdown Day.gif:](https://en.wikipedia.org/wiki/File:InternetSlowdown_Day.gif)
 
 
@@ -366,4 +363,8 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 -   My Mentor for continuous helpful feedback.
 
 -   Tutor support at Code Institute for their support.   
+
+### Disclaimer
+
+-   This project was created for educational purposes only.
 
