@@ -18,7 +18,7 @@
 ## Purpose
 
 In late 2019 [COVID-19](https://en.wikipedia.org/wiki/Coronavirus_disease_2019) or Coronavirus Disease 2019, was identified as a new and unique respiratory 
-illness. It ability to spread rapidly, unhindered throughout a population was first realised in Wuhan, a city within the central province of Hubei in China.
+illness. Its ability to spread rapidly, unhindered throughout a population was first realised in Wuhan, a city within the central province of Hubei in China.
 Since then the disease has developed into a global pandemic, affecting every country and individual on planet either directly through infection or indirectly 
 via the social and economic consequences.
 
@@ -29,7 +29,7 @@ user with accurate and localised COVID information.
 --------
 
 <h2 align="center"><img src="assets/images/responsiveMockupMilestoneTwo.jpg"></h2> 
---------
+
 
 ## The Project Brief
 --------
@@ -265,7 +265,7 @@ User    | Ask                                                                   
     be used in the output.
 
 *   There was an issue when rendering the google charts to the page when using IE11.
-    The issue is explained in this [Google Developers post](https://groups.google.com/g/google-visualization-api/c/YXrYAu069T0).
+    The issue is explained in this [Google Support post](https://support.google.com/datastudio/thread/9269345?hl=en).
 
 
 --------

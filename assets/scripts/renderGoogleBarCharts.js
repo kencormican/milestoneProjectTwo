@@ -53,10 +53,6 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
     //console.log("This is the barChartOneData data inside setMapData(): ", barChartOneData);
     //console.log("This is the barChartTwoData data inside setMapData(): ", barChartTwoData);
 
-    google.charts.load("current", {
-        packages: ["corechart"]                                             // Load Bar Chart package
-    });
-
     google.charts.setOnLoadCallback(drawBarChartDailyCases);
     google.charts.setOnLoadCallback(drawBarChartDailyDeaths);
 

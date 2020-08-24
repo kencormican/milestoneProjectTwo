@@ -5,8 +5,15 @@ $(document).ready(fetchGeoHiveDataSet); // On document ready initiate fetchGeoHi
 const countryWideURLFiltered = "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=Date,ConfirmedCovidCases,TotalConfirmedCovidCases,ConfirmedCovidDeaths,TotalCovidDeaths,CovidCasesConfirmed,HospitalisedCovidCases,RequiringICUCovidCases,Male,Female,Unknown,Aged1,Aged1to4,Aged5to14,Aged15to24,Aged25to34,Aged35to44,Aged45to54,Aged55to64,Aged65up,CommunityTransmission,CloseContact,TravelAbroad,FID&outSR=4326&f=json";
 
 
-//  GeoHive API CountryWide Query URL unfiltered - All Fields (No filters)
+// GeoHive API CountryWide Query URL unfiltered - All Fields (No filters)
 const countryWideURLNoFilter = "https://services1.arcgis.com/eNO7HHeQ3rUcBllm/arcgis/rest/services/CovidStatisticsProfileHPSCIrelandOpenData/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json";
+
+// Single Loader for Google Geochart, Table and Corechart (Bar & PieChart) Packages 
+
+google.charts.load('current', {
+    'packages': ["corechart", "table", "geochart"],
+    mapsApiKey: Apikey,
+});
 
 
 /*----------------------------------------------------------------------------------------------------------------------------------------*/

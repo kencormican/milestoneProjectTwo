@@ -24,12 +24,6 @@ function setTableChartData(fromProcessCSVData) {
     var countyTableChartData = fromProcessCSVData;
     // console.log("This is the countyTableChartData data inside setTableChartData(): ", countyTableChartData);
 
-
-    google.charts.load("current", {
-        packages: ["table"]                 // Load Table Chart package
-    });
-
-
     google.charts.setOnLoadCallback(drawCountyTable);
 
 

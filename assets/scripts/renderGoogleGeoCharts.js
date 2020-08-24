@@ -25,13 +25,6 @@ function setMapData(fromMapArrayParse) {
   
   var mapData = fromMapArrayParse;
 
-
-        google.charts.load("current", {
-            packages: ["geochart"],                         // Load GeoChart Package
-            mapsApiKey: Apikey, 
-
-        });
-
         google.charts.setOnLoadCallback(drawRegionsMap);
 
 
