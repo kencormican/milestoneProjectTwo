@@ -62,16 +62,18 @@ Age, Gender, Number of Hospitalisations and Transmission Type statistics.
 
 ### User stories:
 
-User    | Ask                                                                                                                   |
-:--     | :---------------------------------------------------------------------------------------------------------------------|
-1       | I would like to have localised figures showing the number of infected people and the number of deaths for each county.|
-1       | I would like to see how the disease is affecting different age groups.                                                |     
-2       | I want to know if children are vectors?                                                                               |
-2       | What is the ratio of infected Male to Female cases?                                                                   |
-3       | What was the peak and when did it occur?                                                                              |
-3       | How does that compare to now?                                                                                         |
-4       | How Many people have been hospitalised as a result of the disease?                                                    |
-4       | How many of those required treatment in ICU?                                                                          |
+Ask Num | Scenario                                                                                                                                          |
+:--     | :----------------------------------------------------------------------------------------------------------------------------------------------   |
+1       | As a First Time Visitor, I want to easily understand the main purpose of the site?                                                                |
+2       | As a First Time Visitor, I want to be able to easily navigate to the suites of information I'm interested in?                                     |
+3       | As a First Time Visitor, I would like to have localised figures showing the number of infected people and the number of deaths for each county?   |
+4       | As a First Time Visitor, I would like to see what the ratio of infected Male to Female cases is?                                                  |
+5       | As a First Time Visitor, I want to see how susceptible children are to the disease?                                                               |
+1       | As a Returning Visitor, I would like to be able to see how the disease is affecting different age groups.                                         |     
+2       | As a Returning Visitor, I would like to be able to see What the peak was and when it occurred?                                                    |
+3       | As a Returning Visitor, I would like to be able to see how the Peak compares to now?                                                              |
+1       | As a Frequent User, I would like to be able to see how many people have been hospitalised as a result of the disease?                             |
+2       | As a Frequent User, I would like to be able to see how many of those required treatment in ICU?                                                   |
 
 
 ### Design
@@ -233,6 +235,10 @@ User    | Ask                                                                   
     animate() and fadeTo() methods to achieve the desired result. This approach was derived from the following [StackOverflow post](https://stackoverflow.com/questions/16819721/jquery-animate-and-latest-version).
 
 --------
+
+### Testing User Stories from User Experience (UX) Section
+
+-   #### First Time Visitor Goals
 
 ### Further Testing.
 
