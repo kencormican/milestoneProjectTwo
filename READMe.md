@@ -248,12 +248,12 @@ Ask Num | Scenario                                                              
 5       | As a First Time Visitor, I want to see how susceptible children are to the disease?                                                               |    
 
 *  To facilate the First Time Visitor Goals:
-    1. Upon entering the site, users are automatically greeted with a clean and easily readable [Banner](assets/images/firstTimeUserBanner.jpg) & [navigation bar](assets/images/firstTimeUserNav.jpg) highlighting the sites intent.
-    2. Underneath that the [Headline Line Figures](assets/images/firstTimeUserNav.jpg) are clearly outlined via a H1 Element. 
-    3. The Geographic Heat Map of Ireland acts as the [Hero Image](assets/images/firstTimeUserHeroImage.jpg). It is supported with Text explaining how to use.
-    4. The [Navbar](assets/images/firstTimeUserNavHelper.jpg) also provides a [Helper Menu](assets/images/firstTimeUserHelperMenu.jpg) that guides the end user step by step through each feature.
-    5. These include localised figures provide via the [Heat Map](assets/images/firstTimeUserHeroImage.jpg) and [Table](assets/images/firstTimeUserCountyStats.jpg) Elements.
-    6. They also include [Gender](assets/images/firstTimeAge.jpg) & [Age](assets/images/firstTimeGender.jpg) specific Doughnut Charts addressing Goals 4 & 5.
+    - Upon entering the site, users are automatically greeted with a clean and easily readable [Banner](assets/images/firstTimeUserBanner.jpg) & [navigation bar](assets/images/firstTimeUserNav.jpg) highlighting the sites intent.
+    - Underneath that the [Headline Line Figures](assets/images/firstTimeHeadlineData.jpg) are clearly outlined via a H1 Element. 
+    - The Geographic Heat Map of Ireland acts as the [Hero Image](assets/images/firstTimeUserHeroImage.jpg). It is supported with Text explaining how to use.
+    - The [Navbar](assets/images/firstTimeUserNavHelper.jpg) also provides a [Helper Menu](assets/images/firstTimeUserHelperMenu.jpg) that guides the end user step by step through each feature.
+    - These include localised figures provide via the [Heat Map](assets/images/firstTimeUserHeroImage.jpg) and [Table](assets/images/firstTimeUserCountyStats.jpg) Elements.
+    - They also include [Age](assets/images/firstTimeAge.jpg) & [Gender](assets/images/firstTimeGender.jpg) specific Doughnut Charts addressing Goals 4 & 5.
 
 
 #### Returning Visitor Goals
@@ -264,8 +264,8 @@ Ask Num | Scenario                                                              
 3       | As a Returning Visitor, I would like to be able to see how the Peak compares to now?                                                              |
 
 *  To facilate the Returning Visitor Goals:
-    1. The [Age](assets/images/firstTimeGender.jpg) specific Doughnut Charts provides statics for each age group ranging from infants through to pensioners.
-    2. Bar Charts provide Daily COVID information for the duration of the pandemic that highlight the Nationwide peak [Daily Confirmed Cases](assets/images/returningVisitorPeakVsNow.jpg) aand Deaths. 
+    - The [Age](assets/images/firstTimeAge.jpg) specific Doughnut Charts provides statics for each age group ranging from infants through to pensioners.
+    - Bar Charts provide Daily COVID information for the duration of the pandemic that highlight the Nationwide peak [Daily Confirmed Cases](assets/images/returningVisitorPeakVsNow.jpg) and Deaths. 
   
 
 #### Frequent User Goals
@@ -275,7 +275,7 @@ Ask Num | Scenario                                                              
 2       | As a Frequent User, I would like to be able to see how many of those required treatment in ICU?                                                   |
 
 *  To facilate the Frequent User  Goals:
-    1. The No of Hosipatalusations & ICU addmission requirements are addressed through the same [Doughnut Chart](assets/images/frequentUserHospitalisations.jpg). 
+    - The No of Hosipatalusations & ICU addmission requirements are addressed through the same [Doughnut Chart](assets/images/frequentUserHospitalisations.jpg). 
   
 ### Further Testing.
 
@@ -286,7 +286,7 @@ Ask Num | Scenario                                                              
     - The Web Page renders well at small, medium and large window sizes.
     - Click to View the Banner & Hero Image for [Small](assets/images/testResponsiveSmallBanner&Hero.jpg), [Medium](assets/images/testResponsiveMediumBanner&Hero.jpg) & [Large](assets/images/testResponsiveLargeBanner&Hero.jpg) Window Sizes
     - Click to View the Nav Bar for [Small](assets/images/testResponsiveSmallNav.jpg), [Medium](assets/images/testResponsiveMediumNav.jpg) & [Large](assets/images/testResponsiveLargeNav.jpg) Window Sizes
-    - Click to View the Pie Charts for [Small](assets/images/testResponsiveSmallPieCharts.jpg), [Medium](assets/images/testResponsiveMediumPieCharts.jpg) & [Large](assets/images/testResponsiveMediumPieCharts.jpg) Window Sizes
+    - Click to View the Pie Charts for [Small](assets/images/testResponsiveSmallPieCharts.jpg), [Medium](assets/images/testResponsiveMediumPieCharts.jpg) & [Large](assets/images/testResponsiveLargeBanner&Hero.jpg) Window Sizes
 
 *   The ReadMe.md page was tested using the [Markdown Live Preview](https://markdownlivepreview.com/)
 
