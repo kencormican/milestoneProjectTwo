@@ -238,8 +238,45 @@ Ask Num | Scenario                                                              
 
 ### Testing User Stories from User Experience (UX) Section
 
--   #### First Time Visitor Goals
+#### First Time Visitor Goals
+Ask Num | Scenario                                                                                                                                          |
+:--     | :----------------------------------------------------------------------------------------------------------------------------------------------   |
+1       | As a First Time Visitor, I want to easily understand the main purpose of the site?                                                                |
+2       | As a First Time Visitor, I want to be able to easily navigate to the suites of information I'm interested in?                                     |
+3       | As a First Time Visitor, I would like to have localised figures showing the number of infected people and the number of deaths for each county?   |
+4       | As a First Time Visitor, I would like to see what the ratio of infected Male to Female cases is?                                                  |
+5       | As a First Time Visitor, I want to see how susceptible children are to the disease?                                                               |    
 
+*  To facilate the First Time Visitor Goals:
+    1. Upon entering the site, users are automatically greeted with a clean and easily readable [Banner](assets/images/firstTimeUserBanner.jpg) & [navigation bar](assets/images/firstTimeUserNav.jpg) highlighting the sites intent.
+    2. Underneath that the [Headline Line Figures](assets/images/firstTimeUserNav.jpg) are clearly outlined via a H1 Element. 
+    3. The Geographic Heat Map of Ireland acts as the [Hero Image](assets/images/firstTimeUserHeroImage.jpg). It is supported with Text explaining how to use.
+    4. The [Navbar](assets/images/firstTimeUserNavHelper.jpg) also provides a [Helper Menu](assets/images/firstTimeUserHelperMenu.jpg) that guides the end user step by step through each feature.
+    5. These include localised figures provide via the [Heat Map](assets/images/firstTimeUserHeroImage.jpg) and [Table](assets/images/firstTimeUserCountyStats.jpg) Elements.
+    6. They also include [Gender](assets/images/firstTimeAge.jpg) & [Age](assets/images/firstTimeGender.jpg) specific Doughnut Charts addressing Goals 4 & 5.
+
+
+#### Returning Visitor Goals
+Ask Num | Scenario                                                                                                                                          |
+:--     | :----------------------------------------------------------------------------------------------------------------------------------------------   |
+1       | As a Returning Visitor, I would like to be able to see how the disease is affecting different age groups.                                         |     
+2       | As a Returning Visitor, I would like to be able to see What the peak was and when it occurred?                                                    |
+3       | As a Returning Visitor, I would like to be able to see how the Peak compares to now?                                                              |
+
+*  To facilate the Returning Visitor Goals:
+    1. The [Age](assets/images/firstTimeGender.jpg) specific Doughnut Charts provides statics for each age group ranging from infants through to pensioners.
+    2. Bar Charts provide Daily COVID information for the duration of the pandemic that highlight the Nationwide peak [Daily Confirmed Cases](assets/images/returningVisitorPeakVsNow.jpg) aand Deaths. 
+  
+
+#### Frequent User Goals
+Ask Num | Scenario                                                                                                                                          |
+:--     | :----------------------------------------------------------------------------------------------------------------------------------------------   |
+1       | As a Frequent User, I would like to be able to see how many people have been hospitalised as a result of the disease?                             |
+2       | As a Frequent User, I would like to be able to see how many of those required treatment in ICU?                                                   |
+
+*  To facilate the Frequent User  Goals:
+    1. The No of Hosipatalusations & ICU addmission requirements are addressed through the same [Doughnut Chart](assets/images/frequentUserHospitalisations.jpg). 
+  
 ### Further Testing.
 
 *   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Firefox browsers.
@@ -247,6 +284,9 @@ Ask Num | Scenario                                                              
 
 *   Responsive Testing was completed using [Am I Responsive?](http://ami.responsivedesign.is/#)
     - The Web Page renders well at small, medium and large window sizes.
+    - Click to View the Banner & Hero Image for [Small](assets/images/testResponsiveSmallBanner&Hero.jpg), [Medium](assets/images/testResponsiveMediumBanner&Hero.jpg) & [Large](assets/images/testResponsiveLargeBanner&Hero.jpg) Window Sizes
+    - Click to View the Nav Bar for [Small](assets/images/testResponsiveSmallNav.jpg), [Medium](assets/images/testResponsiveMediumNav.jpg) & [Large](assets/images/testResponsiveLargeNav.jpg) Window Sizes
+    - Click to View the Pie Charts for [Small](assets/images/testResponsiveSmallPieCharts.jpg), [Medium](assets/images/testResponsiveMediumPieCharts.jpg) & [Large](assets/images/testResponsiveMediumPieCharts.jpg) Window Sizes
 
 *   The ReadMe.md page was tested using the [Markdown Live Preview](https://markdownlivepreview.com/)
 
