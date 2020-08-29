@@ -1,16 +1,14 @@
+// Static Data Set derived from CSO spreadsheet
 const csvURL = "assets/dataSet/publicHealthInformation.csv";
 
 $.when(
   $.get(csvURL).then(
     function (response) {
       var CSVdata = response;
-      //console.log(CSVdata)
       processCSVData(CSVdata);
-      //alert( "CSV File was uploaded Successfully" );
     },
     function (errorResponse) {
       // 2nd argument of $.when()$.then() promise for Error Responses
-      // console.log(errorResponse);
       $("#map").html(`<h2>Error: ${errorResponse.responseJSON.message}</h2>`);
     }
   )
@@ -32,8 +30,6 @@ function processCSVData(fromCSVGet) {
     }
 
     var typeFormatedCsvArrayData = csvArrayData;
-
-    // console.log("this is typeFormatedCsvArrayData inside processCSVData() function: ", typeFormatedCsvArrayData);
 
     // Call parseCountyArrayForMap() and pass in formatted Array Data 
 

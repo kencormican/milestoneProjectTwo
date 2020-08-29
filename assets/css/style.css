@@ -33,23 +33,20 @@ p {
 
 /*Block Divider  Styles.................*/
 
-
 .block-divider {
-    width: 75px;
-    height: 5px;
-    border: 0;
-    background-color: #444;
+  width: 75px;
+  height: 5px;
+  border: 0;
+  background-color: #444;
 }
 
 .block-divider-orange {
-    background-color: #f05f40;
+  background-color: #f05f40;
 }
 
 .block-divider-short {
-    width: 35px;
+  width: 35px;
 }
-
-
 
 /*body Styles for fixed header..........................*/
 
@@ -78,7 +75,6 @@ header h1 {
 
 /*Navbar Styles..........................*/
 
-
 /*Headline Styles...........................*/
 
 #article-headline-data {
@@ -86,9 +82,6 @@ header h1 {
 }
 
 /*Map styles...............................*/
-
-
-
 
 /*Bar Chart styles..........................*/
 
@@ -100,8 +93,6 @@ header h1 {
 .section-heading-bar-charts {
   padding: 20px;
 }
-
-
 
 /*Table Section styles...............................*/
 
@@ -142,8 +133,6 @@ header h1 {
 }
 
 .table-slider-button.btn-secondary:focus {
-  /*outline-color: lightsteelblue;
-    outline-color:rgb(216,226,239) rgb(162,169,179)*/
   outline-color: rgb(216, 226, 239);
   opacity: 0.6;
   color: lightsteelblue;
@@ -165,7 +154,6 @@ header h1 {
 
 .section-heading-pie-charts {
   margin-top: 40px;
-  /*margin-bottom: 40px;*/
 }
 
 .select-headings {
@@ -173,10 +161,8 @@ header h1 {
 }
 
 .pie-chart-image {
-    padding-top: 30px;
+  padding-top: 30px;
 }
-
-
 
 /* Pie Chart dropdown Menu Styles.........*/
 
@@ -187,22 +173,19 @@ select {
 /* Media queries requied to render graph correctly at small window sizes*/
 
 .pie-chart-image {
-    height: 250px;
-  }
+  height: 250px;
+}
 
 @media (min-width: 768px) {
   .pie-chart-image {
     height: 350px;
   }
-
-
-}@media (min-width: 992px) {
+}
+@media (min-width: 992px) {
   .pie-chart-image {
     height: 450px;
   }
 }
-
-
 
 /*Footer styles..........................*/
 footer {
@@ -215,14 +198,11 @@ footer {
   margin-top: 20px;
 }
 
-
 .footer-div a {
   font-size: 16px;
   text-decoration: none;
   color: white;
 }
-
-
 
 .footer-icon {
   width: 30px;
@@ -266,18 +246,16 @@ footer {
   -o-transition: all 0.3s ease-in-out;
 }
 
-
 @media (min-width: 576px) {
-
-.footer-div a {
+  .footer-div a {
     font-size: 29px;
-}
+  }
 
-.footer-icon {
+  .footer-icon {
     width: 50px;
     height: 50px;
-    padding: 12px 0; 		
-    font-size: 29px; 							
-    line-height: 29px;	
+    padding: 12px 0;
+    font-size: 29px;
+    line-height: 29px;
   }
 }

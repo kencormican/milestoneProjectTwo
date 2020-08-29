@@ -31,9 +31,6 @@ function parsePieChartCountryData(fromParseIrelandData) {
         };
     });   
 
-    // console.log("This is the parsed pieChartCountryDataObject: ", pieChartCountryDataObject);
-
-
     // Extract pieChartCountryDataObject properties to 2D array
 
     pieChartCountryDataObject.forEach(function (item) {
@@ -45,8 +42,6 @@ function parsePieChartCountryData(fromParseIrelandData) {
 
     var lastTableRow = []; 
     lastTableRow.push(tableRows[tableRows.length - 1]);                 //Insert last Row of tableRows into lastTableRow array
-
-    // console.log("this is lastTableRow:", lastTableRow);
 
     tableHeaders = parseTableHeaders(pieChartCountryDataObject[0]);     // Pass 1st Index of pieChartCountryDataObject to parseTableHeaders Function
 

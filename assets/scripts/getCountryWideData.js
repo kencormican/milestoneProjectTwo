@@ -38,14 +38,9 @@ function fetchGeoHiveDataSet() {
                  <img src="assets/images/InternetSlowdownLoader.gif" alt="loading..." />
                  </div>`);       
 
-    // console.log("fetchGeoHiveDataSet function initiated");
-
     $.when($.getJSON(countryWideURLFiltered)).then(                         //Retrive JSOn Parsed Data from countryWideURL
             function (response) {
             var irelandDataObject = response;                             // set irelandData to store API response
-            // console.log(irelandDataObject);
-            // console.dir(irelandDataObject);
-
             $("#ireland-data").html(parseIrelandData(irelandDataObject)); // placeholder for calling parseIrelandData function passing ing irelandData response  
         },
         function (errorResponse) {                                  // 2nd argument of $.when()$.then() promise for Error Responses
@@ -68,14 +63,7 @@ function fetchGeoHiveDataSet() {
 
 function parseIrelandData(irelandDataObjFromFetch) {
 
-    // console.log("parseIrelandData function initiated");
-    // console.dir(irelandDataObjFromFetch);
-    // console dir shows tree to include features and fields objects for data content & headers respectively
-
     var featuresData = irelandDataObjFromFetch.features;                            // features Object array.
-    
-    // console.log("This is the featuresData Object inside the parseIrelandData() function: ", featuresData);
-
     var totalsCasesArray = parseTotalsCasesData(featuresData);
     var dailyCasesArray = parseDailyCasesData(featuresData);
     var pieChartCountryArray = parsePieChartCountryData(featuresData);
@@ -83,7 +71,6 @@ function parseIrelandData(irelandDataObjFromFetch) {
     parseIrlHeadlineData(totalsCasesArray);                   // Call parseIrlHeadlineData passing in totalsCasesArray  
     parseIrlBarChartData(dailyCasesArray);                   // Call parseIrlBarChartData passing in dailyCasesArray        
     parseIrlPieChartData(pieChartCountryArray);                   // Call parseIrlBarChartData passing in dailyCasesArray       
-    // console.log("This is the pieChartCountryArray inside the parseIrelandData() function: ", pieChartCountryArray);
 
 }
 
@@ -93,14 +80,11 @@ function parseIrelandData(irelandDataObjFromFetch) {
 
 function parseTableHeaders(obj) {
 
-    // console.log("parseTableHeaders function initiated");
-
     var tableHeaders = [];
     //iterate over each obj, retrieve the key and insert it into a table cell
     Object.keys(obj).forEach(function (key) {
         tableHeaders.push(key);                              // Push keys into tableHeaders array
     });
-    //console.log("This is tableHeaders inside parseTableHeaders: ", tableHeaders)
     return tableHeaders; 
 }
 
@@ -112,8 +96,6 @@ function parseTableHeaders(obj) {
 // Parse fetaures Object into array for Headline Data
 
 function parseTotalsCasesData(fromParseIrelandData) {
-
-    // console.log("parseTotalsCasesData function initiated");
 
     var tableHeaders = [];                                                          // Array of Table Headers
     var tableRows = [];                                                             // Array of Table Rows
@@ -139,27 +121,15 @@ function parseTotalsCasesData(fromParseIrelandData) {
     var totalsCasesToArray = tableRows;                         // Initialise totalsCasesToArray with contents of tableRows array
     totalsCasesToArray.unshift(tableHeaders);                   // Insert tableHeaders array into index 0 of totalsCasesToArray
 
-    //console.log("This is the parsed totalsCasesObject: ", totalsCasesObject);
-    //console.log("This is tableRows inside parseIrelandData(): ", tableRows);
-    //console.log("This is tableHeaders inside parseIrelandData(): ", tableHeaders);
-    //console.log("This is totalsCasesToArray inside parseTotalsCasesData(): ", totalsCasesToArray);
-
     return totalsCasesToArray;
     
 
 }
 
-
-
-
-
-
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 // Parse fetaures Object into array for Daily Graphs 
 
 function parseDailyCasesData(fromParseIrelandData) {
-
-    // console.log("parseDailyCasesData function initiated");
 
     var tableHeaders = [];                                                          // Array of Table Headers
     var tableRows = [];                                                             // Array of Table Rows
@@ -185,13 +155,7 @@ function parseDailyCasesData(fromParseIrelandData) {
     var dailyCasesToArray = tableRows;                         // Initialise totalsCasesToArray with contents of tableRows array
     dailyCasesToArray.unshift(tableHeaders);                   // Insert tableHeaders array into index 0 of totalsCasesToArray
 
-    //console.log("This is the parsed totalsCasesObject: ", totalsCasesObject);
-    //console.log("This is tableRows inside parseIrelandData(): ", tableRows);
-    //console.log("This is tableHeaders inside parseIrelandData(): ", tableHeaders);
-    //console.log("This is totalsCasesToArray inside parseTotalsCasesData(): ", totalsCasesToArray);
-
-    return dailyCasesToArray;
-    
+    return dailyCasesToArray;  
 
 }
 
@@ -208,10 +172,6 @@ This Data set is rendered to all window sizes.`*/
 
 function parseIrlHeadlineData(fromParseIrelandData) {
 
-    // console.log("parseIrlHeadlineData function initiated");
-
-    // console.log("This is the fromParseIrelandData Array inside the parseIrlHeadlineData() function: ",fromParseIrelandData);
-
     var headlineData = [];
     headlineData.push(fromParseIrelandData[fromParseIrelandData.length - 1][1]);    //Insert 2nd Index of last array 
     headlineData.push(fromParseIrelandData[fromParseIrelandData.length - 1][2]);    //Insert 3rd Index of last array 
@@ -220,8 +180,7 @@ function parseIrlHeadlineData(fromParseIrelandData) {
         <h2>Total Confirmed Covid Cases: ${headlineData[0]}</h2>
         <h2>Total Covid Deaths: ${headlineData[1]}</h2>`
     );
-
-    // console.log("This is the headlineData Array inside the parseIrlHeadlineData() function: ", headlineData);
+    
 }
 
 
