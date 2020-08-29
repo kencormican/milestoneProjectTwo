@@ -62,6 +62,15 @@ function setBarChartData(fromBarChartParseCases, fromBarChartParseDeaths) {
 
     function drawBarChartDailyCases() {
 
+        /*Multiple API calls were made to render the Daily COVID information to screen.  
+        The same GeoHive API call used to produce the Headline Data is used to retrieve this data set. 
+        The resultant object is then passed through multiple functions to produce the required array
+        format before being rendered to the page via the Google Charts API.
+        Functions used to process the geoHive JSON response into arrays including the parseDailyCasesData(),
+        fetchLocalDate(), parseIrlBarChartData and setBarChartData().
+        Note the deserialised fetchLocalDate() is used to alter the JSON response Unix Timestamp into a usable Date format 
+        This Data set is rendered to only medium and large window sizes.*/
+
         var data = google.visualization.arrayToDataTable(barChartOneData, false);
         // assumes you have timestamps in column 0, and two data series (columns 1 and 2)
 

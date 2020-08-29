@@ -54,6 +54,13 @@ function parseIrlPieChartData(fromParseIrelandData) {
 function setCountryPieChartData(fromAgePieChartCases, fromGenderPieChartCases,
     fromHospitalPieChartCases, fromTransmissionPieChartCases) {
 
+    /*  Multiple API calls were made to render this infomation to screen. The dataset is retieved using the geoHive API Call.
+        The objects are processed into array using a similar process to those described early.
+        The array row and columns re then transposed befroe passing them into the google draw functions.
+        The graphs are rendered using the Geo Chart API. Addional Interactivity has been added using the select dropdown menus
+        in conjunction with jQuery.
+        This Data set is rendered to all window sizes.*/
+
     pieChartAgeData = transpose(fromAgePieChartCases);                          // Call Transpose function passing in fromAgePieChartCases
     pieChartGenderData = transpose(fromGenderPieChartCases);                    // Call Transpose function passing in fromGenderPieChartCases
     pieChartHospitalData = transpose(fromHospitalPieChartCases);                // Call Transpose function passing in fromHospitalPieChartCases
@@ -105,6 +112,12 @@ function drawChartAgeOrGender(value, pieChartAgeData, pieChartGenderData) {
 
 
     google.charts.setOnLoadCallback(drawChart);
+
+   /*   These Graphs renders Age, Gender & Hospitalisation Data to the screen.
+        Note* media queries altering the wrapper div dimensions had to be used in conjunction with the Geo Charts API 
+        option properties to ensure the pie charts rendered correctly at different breakpoints.
+        This Data set is rendered to all window sizes. At the  medium breakpoint it changes from a 12 unit column
+        to 2x 6 unit colums.*/
 
     function drawChart(data, options) {
         var dataAgeInDraw = google.visualization.arrayToDataTable(pieChartAgeData, true);

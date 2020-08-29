@@ -201,6 +201,11 @@ function parseDailyCasesData(fromParseIrelandData) {
 /*----------------------------------------------------------------------------------------------------------------------------------------*/
 // Headline Data Collector
 
+/*This provides realtime countrywide headline data  derived from a  geoHive Open Source API & Data set. 
+The information is retrieved using a jQuery when().then() promise before being processed into arrays by multiple 
+functions & ulimately rendered to the html using the parseIrlHeadlineData() function. 
+This Data set is rendered to all window sizes.`*/
+
 function parseIrlHeadlineData(fromParseIrelandData) {
 
     // console.log("parseIrlHeadlineData function initiated");

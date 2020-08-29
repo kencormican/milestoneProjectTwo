@@ -21,6 +21,12 @@
 
 function setTableChartData(fromProcessCSVData) {
 
+    /*  The county table data set was derived from the same parseCSV process as the heatmap. Instead of using the
+        Google API call, the Google Charts API and Table Chart library are used to render a responsive table to the 
+        page.  The intent here is to partially hide the full table and use a jquery on click function to expose the remainder 
+        of teh data set.
+        This Data set is rendered to only large window sizes.*/
+
     var countyTableChartData = fromProcessCSVData;
     // console.log("This is the countyTableChartData data inside setTableChartData(): ", countyTableChartData);
 

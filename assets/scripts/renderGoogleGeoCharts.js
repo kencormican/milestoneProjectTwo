@@ -22,6 +22,15 @@ function parseCountyArrayForMap(fromCSVParse) {             // Create create thr
 
 
 function setMapData(fromMapArrayParse) {
+
+/*  This Map renders the Nationwide COVID statistics published by the Central Statistics Office on the 28th of August. 
+    Please Note, A static Data Set was required in this instance because robust dynamic open source 
+    information is currently unavailable on a county by county basis.The CSV formatted data is initally retrieved from 
+    a locally stored file using a jQuery when().then() promise, before being parsed into arrays using the processCSVData()
+    fucntion and the jQuery.csv library.  It it ultimately rendered to a geographic Heat Map using a Google Maps API Call 
+    in conjunction with the Geo Chart package/library.
+
+    This Data set is rendered to all window sizes.`,*/
   
   var mapData = fromMapArrayParse;
 
