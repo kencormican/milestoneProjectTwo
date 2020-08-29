@@ -286,7 +286,7 @@ Ask Num | Scenario                                                              
     - The Web Page renders well at small, medium and large window sizes.
     - Click to View the Banner & Hero Image for [Small](assets/images/testResponsiveSmallBanner&Hero.jpg), [Medium](assets/images/testResponsiveMediumBanner&Hero.jpg) & [Large](assets/images/testResponsiveLargeBanner&Hero.jpg) Window Sizes
     - Click to View the Nav Bar for [Small](assets/images/testResponsiveSmallNav.jpg), [Medium](assets/images/testResponsiveMediumNav.jpg) & [Large](assets/images/testResponsiveLargeNav.jpg) Window Sizes
-    - Click to View the Pie Charts for [Small](assets/images/testResponsiveSmallPieCharts.jpg), [Medium](assets/images/testResponsiveMediumPieCharts.jpg) & [Large](assets/images/testResponsiveLargeBanner&Hero.jpg) Window Sizes
+    - Click to View the Pie Charts for [Small](assets/images/testResponsiveSmallPieCharts.jpg), [Medium](assets/images/testResponsiveMediumPieCharts.jpg) & [Large](assets/images/testResponsiveLargePieCharts.jpg) Window Sizes
 
 *   The ReadMe.md page was tested using the [Markdown Live Preview](https://markdownlivepreview.com/)
 
@@ -390,7 +390,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Content
 
--   All content was either written by the developer or open source data sets rendered to the Web page via the Google Charts and geoHive API calls.
+-   All content was either written by the developer or derived from open source data sets rendered to the Web page via the Google Charts and geoHive API calls.
 
 ### Media
 
